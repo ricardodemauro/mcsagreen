@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>02 Eventos</title>
+</head>
+<body>
+    <button id="btn1">Não clique aqui</button>
+    <button id="btn2">Clique aqui</button>
+
+    <select>
+        <option>Item 1</option>
+        <option>Item 2</option>
+        <option>Item 3</option>
+    </select>
+
+    <script src="Scripts/jquery-3.3.1.min.js"></script>
+    <script>
+        function xpto() { alert('Cliquei');}
+        //$('#btn1').click(xpto);
+
+        $('#btn1').click(function () {
+            alert('função anônima');
+        });
+
+        $('#btn2').mousemove(function () {
+            console.log('mousemove acionado');
+        });
+
+        $('select').on('change', function () {
+            console.log('item alterado');
+            //var $select = $(this);
+            console.log(
+                $('select option:selected').text()
+            );
+            //console.log();
+            //$('select').off('change');
+        });
+
+       
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        var data = [1, 2, 4, 5, 6, 7];
+
+        for (var i = 0; i < data.length; i++) {
+            console.log("data " + i + " value " + data[i]);
+        }
+
+        var dataobj = {
+            name: 'denis',
+            lastname: 'silva'
+        }
+
+        for (p in dataobj) {
+            console.log('data member ' + p + " data value " + dataobj[p]);
+        }
+
+        var i = 0;
+        do {
+            console.log('do while ' + i);
+            i++;
+        } while (i < 10);
+
+        while (true)
+        {
+            console.log("while true")
+            break;
+        }
+    </script>
+</body>
+</html>

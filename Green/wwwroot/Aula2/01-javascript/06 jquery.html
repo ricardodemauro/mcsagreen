@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>06 jquery</title>
+</head>
+<body>
+    
+    <h1>Usando o jQuery</h1>
+    <script src="jquery-3.3.1.min.js"></script>
+    <script>
+        //document.getElementsByTagName('h1')[0].textContent = 'Testando';
+
+        $('h1').text('Testando c/ jQuery');
+        
+        $('h1').append('<div>ola mundo</div>')
+        $("<div>ola mundo</div>").appendTo('h1')
+    </script>
+</body>
+</html>

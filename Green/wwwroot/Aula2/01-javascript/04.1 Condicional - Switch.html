@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>04 Condicional - IF</title>
+</head>
+<body>
+    <div>
+        <label for="time">Selecione o bi campeão mundial</label>
+        <select id="time">
+            <option value="">Selecione</option>
+            <option value="1">Ponte Preta</option>
+            <option value="2">Coringão</option>
+            <option value="3">Parmeira</option>
+            <option value="4">São Paulo</option>
+        </select>
+        <button onclick="validar()">Validar</button>
+    </div>
+    <div id="saida"></div>
+
+
+    <!--<div>
+        <label>
+            Selecione o bi campeão mundial
+            <select id="time2">
+                <option value="">Selecione</option>
+                <option value="1">Ponte Preta</option>
+                <option value="2">Coringão</option>
+                <option value="3">Parmeira</option>
+                <option value="4">São Paulo</option>
+            </select>
+        </label>
+    </div>-->
+
+    <script>
+        //var xpto = 'testando escopo global';
+
+        function validar(xpto) {
+            //console.log(xpto);
+            var sel = time.value;
+            //console.log(sel);
+            //if (Number(sel) === 1) {
+            //    var xpto = 'testando escopo de uma função';
+            //    console.log('Não tem mundial');
+            //} else if (sel == 2) {
+            //    console.log('Tem');
+            //} else if (sel == 3) {
+            //    console.log('s/ mundial');
+            //}
+            //else {
+            //    console.log('Não sei');
+            //}
+            switch (sel) {
+                case "1":
+                case "3":
+                    console.log('Não tem mundial');
+                    break;
+                case "2":
+                    console.log('Tem');
+                    break;
+                default:
+                    console.log('Não sei');
+            }
+
+            //console.log(xpto);
+
+        }
+
+        //function xyz() {
+        //    //o escopo no js é por função
+        //    console.log(xpto);
+        //}
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script type="text/javascript">
+        var rOnlyNumber = /\d+/;
+        var regexOnlyNumber = new RegExp('\d+');
+
+        var varNumber = "03523523532";
+        var varNotNumbers = "abc232323cdd";
+
+        console.log('regex numbers ' + rOnlyNumber.test(varNumber))
+        console.log('regex numbers ' + regexOnlyNumber.test(varNotNumbers))
+    </script>
+</body>
+</html>
