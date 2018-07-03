@@ -1,0 +1,42 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+</head>
+<body>
+    <ul id="cadCliente">
+
+    </ul>
+
+
+    <script type="text/javascript">
+        function inicializar() {
+            //1 chamar AJAX GET rota /clientes/JsonClientes usando XMLHttpRequest()
+
+            //2 validar retorno
+
+            //3 imprimir lis com nome de clientes usando jquery
+
+            var request = new XMLHttpRequest();
+            var url = "http://localhost:56641/clientes/JsonClientes";
+            request.open("GET", url);
+
+            request.onreadystatechange = function () {
+                if (request.readyState == XMLHttpRequest.DONE && request.status == 200) {
+                    var clientes = JSON.parse(request.responseText)
+                    for (var i = 0; i < clientes.length; i++) {
+                        $("#cadCliente").append("<li>" + clientes[i].Nome + "</li>");
+                    }
+                    
+                }
+            }
+            request.send();
+            
+        }
+
+        inicializar();
+    </script>
+</body>
+</html>
