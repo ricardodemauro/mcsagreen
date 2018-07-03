@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>04 Condicional - IF</title>
+</head>
+<body>
+    <div>
+        <label for="time">Selecione o bi campeão mundial</label>
+        <select id="time">
+            <option value="">Selecione</option>
+            <option value="1">Ponte Preta</option>
+            <option value="2">Coringão</option>
+            <option value="3">Parmeira</option>
+            <option value="4">São Paulo</option>
+        </select>
+        <button onclick="validar()">Validar</button>
+    </div>
+    <div id="saida"></div>
+
+
+    <!--<div>
+        <label>
+            Selecione o bi campeão mundial
+            <select id="time2">
+                <option value="">Selecione</option>
+                <option value="1">Ponte Preta</option>
+                <option value="2">Coringão</option>
+                <option value="3">Parmeira</option>
+                <option value="4">São Paulo</option>
+            </select>
+        </label>
+    </div>-->
+
+    <script>
+        //var xpto = 'testando escopo global';
+
+        function conditional() {
+            var n1 = "1";
+            var s1 = 1;
+
+            var b1 = false;
+            var b2 = 0;
+            var b3 = [];
+            var b4 = {};
+
+            document.writeln(b1 == b2)
+            document.writeln(b1 == b3)
+            document.writeln(b1 == b4)
+            document.writeln(b2 == b4)
+
+            if (n1 == s1) {
+                document.writeln('content n1 == s1 ' + (n1 == s1))
+            }
+
+            if (n1 === s1) {
+                document.writeln('content n1 === s1 ' + (n1 === s1))
+            }
+
+            var type1 = typeof n1;
+            var type2 = typeof s1;
+
+            document.writeln('type1 ' + (type1))
+            document.writeln('type2 ' + (type2))
+        }
+
+        function validar(xpto) {
+            //console.log(xpto);
+            var sel = time.value;
+            //console.log(sel);
+            if (Number(sel) === 1) {
+                var xpto = 'testando escopo de uma função';
+                console.log('Não tem mundial');
+            } else if (sel == 2) {
+                console.log('Tem');
+            } else if (sel == 3) {
+                console.log('s/ mundial');
+            }
+            else {
+                console.log('Não sei');
+            }
+            console.log(xpto);
+
+        }
+
+        conditional()
+
+            //function xyz() {
+            //    //o escopo no js é por função
+            //    console.log(xpto);
+            //}
+
+    </script>
+
+</body>
+</html>

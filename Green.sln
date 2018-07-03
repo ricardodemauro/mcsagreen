@@ -1,15 +1,17 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27703.2035
+VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Green", "Green\Green.csproj", "{FA07D7B6-66A2-4DCC-BC30-852C3A6A8DF3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Green", "Green\Green.csproj", "{FA07D7B6-66A2-4DCC-BC30-852C3A6A8DF3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula3", "Aula3", "{91E7B42A-C4BD-4733-A0F9-08729850173A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CadCli", "Aula3\CadCli\CadCli.csproj", "{DD0649DF-D554-4CFE-9A99-993F074AB4D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula4", "Aula4", "{D8158B43-1340-4970-8777-DE56F63A95F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcsagreen", "mcsagreen\mcsagreen.csproj", "{FA1DDFDA-0C5F-46B4-AE4E-919B43A6C294}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -25,6 +27,10 @@ Global
 		{DD0649DF-D554-4CFE-9A99-993F074AB4D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD0649DF-D554-4CFE-9A99-993F074AB4D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD0649DF-D554-4CFE-9A99-993F074AB4D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FA1DDFDA-0C5F-46B4-AE4E-919B43A6C294}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FA1DDFDA-0C5F-46B4-AE4E-919B43A6C294}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FA1DDFDA-0C5F-46B4-AE4E-919B43A6C294}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FA1DDFDA-0C5F-46B4-AE4E-919B43A6C294}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

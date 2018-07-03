@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>05 Arrays</title>
+</head>
+<body>
+
+    <script>
+        var minhaArray = [];
+        minhaArray.push('Fabiano');
+        minhaArray.push(123);
+        minhaArray.push(false);
+        console.log(minhaArray);
+        console.log(minhaArray[1]);
+        console.log('tamanho ' + minhaArray.length);
+
+        var cliente = {};
+        cliente.nome = 'Fabiano';
+        cliente.salario = 1000.99;
+        cliente.estadoCivil = 'burro';
+        //console.log(cliente);
+
+
+        var cliente2 = {
+            nome: 'Carlos',
+            salario: 1000.99,
+            estadoCivil: 'inteligente'
+        };
+
+        //console.log(cliente2);
+
+
+        minhaArray.push(cliente);
+
+        console.log(minhaArray);
+
+        console.log(minhaArray[2]);
+
+        console.log('Tamanho do array: ' + minhaArray.length);
+        //Removendo só o índice 2
+        minhaArray.splice(2, 1);
+        console.log('Tamanho do array: ' + minhaArray.length);
+
+    </script>
+</body>
+</html>
