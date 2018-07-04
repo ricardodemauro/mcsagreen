@@ -14,6 +14,17 @@
         <option>Item 3</option>
     </select>
 
+
+    <div>
+        <p class="active">Hello world</p>
+        <p>Not Hello world</p>
+    </div>
+
+    <div>
+        <label>Valores:</label>
+        <input type="text" id="valores" value="Hello from input" />
+    </div>
+
     <script src="Scripts/jquery-3.3.1.min.js"></script>
     <script>
         function xpto() { alert('Cliquei'); }
@@ -38,7 +49,10 @@
         });
 
 
+        alert(jQuery('p.active').text());
+        //alert(jQuery('.active').text());
 
+        alert($('#valores').val());
     </script>
 </body>
 </html>

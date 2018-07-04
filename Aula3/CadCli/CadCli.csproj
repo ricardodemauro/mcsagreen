@@ -99,6 +99,7 @@
     <Content Include="Content\estilo.css" />
     <Content Include="Global.asax" />
     <Content Include="HtmlCliente.html" />
+    <Content Include="jQueryAjax.html" />
     <Content Include="Scripts\bootstrap.bundle.js" />
     <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />

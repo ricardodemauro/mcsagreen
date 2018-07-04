@@ -22,6 +22,8 @@
     <Content Include="wwwroot\Aula2\02-jquery\03 loop.html" />
     <Content Include="wwwroot\Aula2\02-jquery\04 regex.html" />
     <Content Include="wwwroot\Aula2\02-jquery\05 demo.html" />
+    <Content Include="wwwroot\Aula2\02-jquery\exercicio.html" />
+    <Content Include="wwwroot\Aula2\02-jquery\scripts\exercicio.html" />
     <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.js" />
     <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.min.js" />
