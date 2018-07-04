@@ -6,43 +6,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wwwroot\Aula1\01 - HelloWorld\index.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\01 Script.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\01.1 Script - file.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\02 Variaveis.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\03 Functions.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\04 Condicional - IF.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\04.1 Condicional - Switch.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\05 Arrays.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\06 jquery.html" />
-    <Content Include="wwwroot\Aula2\01-javascript\jquery-3.3.1.min.js" />
-    <Content Include="wwwroot\Aula2\01-javascript\meu-script.js" />
-    <Content Include="wwwroot\Aula2\02-jquery\01 Elementos.html" />
-    <Content Include="wwwroot\Aula2\02-jquery\02 Eventos.html" />
-    <Content Include="wwwroot\Aula2\02-jquery\03 loop.html" />
-    <Content Include="wwwroot\Aula2\02-jquery\04 regex.html" />
-    <Content Include="wwwroot\Aula2\02-jquery\05 demo.html" />
-    <Content Include="wwwroot\Aula2\02-jquery\exercicio.html" />
-    <Content Include="wwwroot\Aula2\02-jquery\scripts\exercicio.html" />
-    <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.js" />
-    <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.min.js" />
-    <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.min.map" />
-    <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.slim.js" />
-    <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.slim.min.js" />
-    <Content Include="wwwroot\Aula2\02-jquery\scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="wwwroot\index.html" />
-  </ItemGroup>
-  <ItemGroup>
     <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.0.0" />
     <PackageReference Include="Microsoft.AspNetCore" Version="1.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="1.1.3" />
     <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.1.2" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="1.1.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="1.1.2" />
   </ItemGroup>
+
   <ItemGroup>
-    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="1.0.1" />
+    <Folder Include="wwwroot\fonts\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,76 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>04-layouts</title>
+    <style>
+        @font-face {
+            font-family: indieFlower;
+            src: ('IndieFlower.ttf')
+        }
+
+        div.box {
+            width: 30px;
+            height: 30px;
+            background-color: green;
+        }
+
+        div.box2 {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+        }
+
+        .block {
+            display: block;
+        }
+
+        .inline {
+            display: inline;
+            display: inline-block;
+        }
+
+        .table {
+            display: table;
+        }
+
+        .positioned {
+            text-shadow: 2px 2px 0 red;
+        }
+
+        .flexbox {
+            display: flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+        }
+
+        .tbox {
+            border: 2px solid rgb(96, 139, 168);
+            border-radius: 5px;
+            background-color: rgba(96, 139, 168, .2);
+            width: 200px;
+    </style>
+</head>
+<body>
+    <h2>Inline</h2>
+    <div class="box inline"></div>
+    <div class="box2 inline"></div>
+    <div class="box inline"></div>
+    <hr />
+    <h2>flexbox</h2>
+    <div class="flexbox">
+        <div class="tbox">One</div>
+        <div class="tbox">Two</div>
+        <div class="tbox">
+            Three
+            <br />has
+            <br />extra
+            <br />text
+        </div>
+    </div>
+    <hr />
+    <h2>Block</h2>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="box"></div>
+</body>
+</html>

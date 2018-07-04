@@ -1,0 +1,39 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>02-text-effects</title>
+    <style>
+        @font-face {
+            font-family: indieFlower;
+            src: ('IndieFlower.ttf')
+        }
+
+        p.paragraphIdentation {
+            text-indent: 3rem;
+        }
+
+        p.lineWrapping {
+            hyphens: manual;
+            word-wrap: break-word;
+        }
+
+        p.textSpacing {
+            word-spacing: 2rem;
+        }
+        p.shadowEffects {
+            text-shadow: 2px 2px 0 red;
+        }
+    </style>
+</head>
+<body>
+    <p class="newfont">Hello world</p>
+
+    <p class="newfont paragraphIdentation">Hello world</p>
+
+    <p class="newfont lineWrapping">Hello world</p>
+
+    <p class="newfont textSpacing">Hello world</p>
+
+    <p class="newfont shadowEffects">Hello world</p>
+</body>
+</html>

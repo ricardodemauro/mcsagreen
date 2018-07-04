@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>05-pseud-elements</title>
+    <style>
+        @font-face {
+            font-family: indieFlower;
+            src: ('IndieFlower.ttf')
+        }
+
+        p::first-letter {
+            color: red;
+        }
+        p::first-line{
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <p class="newfont">Hello world</p>
+
+    <p class="newfont">Hello world<br />Hello from second line</p>
+</body>
+</html>

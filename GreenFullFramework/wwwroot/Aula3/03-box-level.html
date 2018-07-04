@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>03-box-level</title>
+    <style>
+        @font-face {
+            font-family: indieFlower;
+            src: ('IndieFlower.ttf')
+        }
+
+        div.box {
+            height: 160px;
+            display: block;
+        }
+
+        .outlines {
+            outline: 2px solid green;
+            outline-offset: 1rem;
+        }
+
+        :link:hover {
+            outline: 1px solid #000;
+        }
+
+        :link:hover {
+            outline: solid black 1px;
+        }
+
+        .presentation {
+            border-radius: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: green;
+            overflow: hidden;
+            resize: horizontal;
+        }
+
+        textarea.resizeOff {
+            resize: none;
+        }
+
+        textarea.resizeOn {
+            resize: both;
+        }
+
+        .multipleColumnLayout {
+            column-count: 3;
+            column-gap: 5rem;
+            column-rule: 1px solid black;
+            height: 20px;
+        }
+    </style>
+</head>
+<body>
+    <p class="newfont">Hello world</p>
+    <div class="box">
+        <h3>outlines</h3>
+        <p class="newfont outlines">Hello world - outlines</p>
+    </div>
+    <div class="box">
+        <h3>presentation</h3>
+        <div class="presentation">Hello world - presentation</div>
+    </div>
+    <div class="box">
+        <h2>Resize off</h2>
+        <textarea class="resizeOff">Type some text here.</textarea>
+    </div>
+    <div class="box">
+        <h2>Resize On</h2>
+        <textarea class="resizeOn">Type some text here.</textarea>
+    </div>
+    <div class="box">
+        <h3>Multi column layout</h3>
+        <p class="newfont multipleColumnLayout">
+            This is a bunch of text split into three columns
+            using the CSS `column-count` property. The text
+            is equally distributed over the columns.
+        </p>
+    </div>
+    <div class="box">
+        <a href="#">Sample Link - hover me</a>
+    </div>
+</body>
+</html>
