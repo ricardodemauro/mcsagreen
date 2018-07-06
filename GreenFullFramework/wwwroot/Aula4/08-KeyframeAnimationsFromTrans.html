@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>03-animations</title>
+    <style>
+        @keyframes ballmovement {
+            0% {
+                width: 300px;
+                background-color: yellow;
+                animation-timing-function: ease-in;
+            }
+
+            100% {
+                width: 600px;
+                background-color: purple;
+                animation-timing-function: ease-out;
+            }
+        }
+
+        div {
+            width: 300px;
+            height: 300px;
+            background-color: yellow;
+        }
+
+            div.animate {
+                animation-name: ballmovement;
+                animation-duration: 10s;
+                animation-delay: 3s;
+                animation-timing-function: linear;
+                animation-iteration-count: 2;
+                animation-direction: alternate;
+            }
+    </style>
+</head>
+<body>
+    <div id="mydiv"></div>
+
+    <button onclick="doanimate()">Animate</button>
+    <script>
+        function doanimate() {
+            const elem = document.getElementById('mydiv');
+            elem.classList.add("animate");
+        }
+    </script>
+</body>
+</html>
