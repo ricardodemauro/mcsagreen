@@ -23,5 +23,19 @@ namespace ExemploGreen.Web.Data
                 Telefone = "4321"
             }
         };
+
+        public static List<Cliente> Clientes = new List<Cliente>
+        {
+            new Cliente
+            {
+                Id = 1,
+                Nome = "Contato Teste",
+            },
+            new Cliente
+            {
+                Id = 2,
+                Nome = "Contato Teste 2",
+            }
+        };
     }
 }

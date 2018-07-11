@@ -21,15 +21,24 @@ namespace ExemploGreen.Web.Controllers
             return View();
         }
 
-        public ActionResult Detalhe()
+        public ActionResult Detalhe(int id)
         {
-            Contato model = new Contato
-            {
-                Id = 1,
-                Nome = "Contato Teste",
-                Telefone = "1234"
-            };
+            Contato model = DataSource.Contatos[id];
             return View(model);
+        }
+
+        [HttpGet]
+        public ActionResult Editar(int id)
+        {
+            Contato model = DataSource.Contatos[id];
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Editar(int id, Contato model)
+        {
+            DataSource.Contatos[0] = model;
+            return RedirectToAction("Index");
         }
 
         public ActionResult Criar()
@@ -44,21 +53,5 @@ namespace ExemploGreen.Web.Controllers
             return RedirectToAction("Index");
         }
 
-
-
-
-        [HttpGet]
-        public ActionResult Editar()
-        {
-            Contato model = DataSource.Contatos[0];
-            return View(model);
-        }
-
-        [HttpPost]
-        public ActionResult Editar(Contato model)
-        {
-            DataSource.Contatos[0] = model;
-            return RedirectToAction("Index");
-        }
     }
 }
