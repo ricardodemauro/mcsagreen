@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ExemploGreen.Web.Models
 {
@@ -20,8 +21,7 @@ namespace ExemploGreen.Web.Models
         [PhoneValidation(ErrorMessage = "Telefone é inválido")]
         public string Telefone { get; set; }
 
-        [EmailAddress]
-        [Required]
+        [Remote("CheckValidEmail", "BackOffice", ErrorMessage = "Email remote inválido")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
