@@ -49,6 +49,9 @@ namespace ExemploGreen.Web.Controllers
         [HttpPost]
         public ActionResult Criar(Contato model)
         {
+            if (!ModelState.IsValid)
+                return View(model);
+
             DataSource.Contatos.Add(model);
             return RedirectToAction("Index");
         }
