@@ -14,5 +14,16 @@ namespace ExemploGreen.Web.Controllers
             bool isValid = email.EndsWith("@green.com.br");
             return Json(isValid, JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult Autenticar()
+        {
+            Session["auth"] = true;
+            return RedirectToActionPermanent("Index", "Contato");
+        }
+
+        public PartialViewResult AuthMenuPartial()
+        {
+            return PartialView("_MenuAuthenticated", true);
+        }
     }
 }
