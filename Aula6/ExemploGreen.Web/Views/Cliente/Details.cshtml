@@ -1,13 +1,13 @@
-﻿@model ExemploGreen.Web.Models.Contato
+﻿@model ExemploGreen.Web.Models.Cliente
 
 @{
-    ViewBag.Title = "Detalhe";
+    ViewBag.Title = "Details";
 }
 
-<h2>Detalhe</h2>
+<h2>Details</h2>
 
 <div>
-    <h4>Contato</h4>
+    <h4>Cliente</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -43,16 +43,16 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.Endereco)
+            @Html.DisplayNameFor(model => model.DataNascimento)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.Endereco)
+            @Html.DisplayFor(model => model.DataNascimento)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Editar", "Editar", new { id = Model.Id }) |
-    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

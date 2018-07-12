@@ -13,7 +13,7 @@ namespace ExemploGreen.Web.Controllers
         private readonly IDataSource<Contato> dataSource;
 
         public ContatoController()
-            : this(new ContatoDataSource())
+            : this(ContatoDataSource.GetInstance())
         {
 
         }

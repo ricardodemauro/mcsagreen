@@ -15,7 +15,13 @@ namespace ExemploGreen.Web.Data
                     Telefone = "11 2222-4444",
                     Sobrenome = "Sobrenome teste",
                     DataNascimento = DateTime.Now.AddYears(-8),
-                    Email = "email@gree.com"
+                    Email = "email@gree.com",
+                    Endereco = new Endereco
+                    {
+                        Cidade = "Sao Paulo",
+                        Pais = "Brasil",
+                        Rua = "Rua teste"
+                    }
                 },
                 new Contato
                 {
@@ -23,10 +29,22 @@ namespace ExemploGreen.Web.Data
                     Telefone = "11 1111-333",
                     Sobrenome = "Sobrenome teste 2",
                     DataNascimento = DateTime.Now.AddYears(-18),
-                    Email = "email2@gree.com"
+                    Email = "email2@gree.com",
+                    Endereco = new Endereco
+                    {
+                        Cidade = "Sao Paulo",
+                        Pais = "Brasil",
+                        Rua = "Rua teste"
+                    }
                 }
             });
             base.Seed();
         }
+
+        private ContatoDataSource() { }
+
+        private static readonly ContatoDataSource _instance = new ContatoDataSource();
+
+        public static IDataSource<Contato> GetInstance() { return _instance; }
     }
 }

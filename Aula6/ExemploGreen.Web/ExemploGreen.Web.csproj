@@ -143,6 +143,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\BackOfficeController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Data\ClienteDataSource.cs" />
@@ -154,6 +155,7 @@
     </Compile>
     <Compile Include="Infraestrutura\DataAnnotations\PhoneValidationAttribute.cs" />
     <Compile Include="Infraestrutura\IIdEntity.cs" />
+    <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Contato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -201,11 +203,17 @@
     <Content Include="Views\Contato\Criar.cshtml" />
     <Content Include="Views\Contato\Editar.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Endereco.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Endereco.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Cliente\Details.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BackOffice\" />
-    <Folder Include="Views\Cliente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
