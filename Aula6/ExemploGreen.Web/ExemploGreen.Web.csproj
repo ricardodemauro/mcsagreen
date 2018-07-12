@@ -154,6 +154,8 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infraestrutura\DataAnnotations\PhoneValidationAttribute.cs" />
+    <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
+    <Compile Include="Infraestrutura\HtmlHelpers\LogoHtmlHelper.cs" />
     <Compile Include="Infraestrutura\IIdEntity.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Cliente.cs" />

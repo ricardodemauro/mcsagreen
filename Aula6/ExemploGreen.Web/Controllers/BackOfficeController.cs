@@ -25,5 +25,10 @@ namespace ExemploGreen.Web.Controllers
         {
             return PartialView("_MenuAuthenticated", true);
         }
+
+        public ActionResult HtmlHelpers()
+        {
+            return View();
+        }
     }
 }
