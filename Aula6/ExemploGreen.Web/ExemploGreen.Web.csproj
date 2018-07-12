@@ -145,11 +145,15 @@
     <Compile Include="Controllers\BackOfficeController.cs" />
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Data\DataSource.cs" />
+    <Compile Include="Data\ClienteDataSource.cs" />
+    <Compile Include="Data\ContatoDataSource.cs" />
+    <Compile Include="Data\DataSourceBase_.cs" />
+    <Compile Include="Data\IDataSource.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infraestrutura\DataAnnotations\PhoneValidationAttribute.cs" />
+    <Compile Include="Infraestrutura\IIdEntity.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Contato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -196,10 +200,12 @@
     <Content Include="Views\Contato\Detalhe.cshtml" />
     <Content Include="Views\Contato\Criar.cshtml" />
     <Content Include="Views\Contato\Editar.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\BackOffice\" />
+    <Folder Include="Views\Cliente\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -1,4 +1,5 @@
-﻿using ExemploGreen.Web.Infraestrutura.DataAnnotations;
+﻿using ExemploGreen.Web.Infraestrutura;
+using ExemploGreen.Web.Infraestrutura.DataAnnotations;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.Web.Mvc;
 
 namespace ExemploGreen.Web.Models
 {
-    public class Contato
+    public class Contato : IIdEntity
     {
         public int Id { get; set; }
 

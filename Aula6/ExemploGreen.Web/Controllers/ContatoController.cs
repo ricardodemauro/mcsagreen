@@ -10,34 +10,42 @@ namespace ExemploGreen.Web.Controllers
 {
     public class ContatoController : Controller
     {
+        private readonly IDataSource<Contato> dataSource;
+
+        public ContatoController()
+            : this(new ContatoDataSource())
+        {
+
+        }
+
+        public ContatoController(IDataSource<Contato> dataSource)
+        {
+            this.dataSource = dataSource;
+        }
+
         // GET: Contato
         public ActionResult Index()
         {
-            return View(DataSource.Contatos);
-        }
-
-        public ActionResult ListaContato()
-        {
-            return View();
+            return View(dataSource.Get());
         }
 
         public ActionResult Detalhe(int id)
         {
-            Contato model = DataSource.Contatos[id];
+            Contato model = dataSource.Get(id);
             return View(model);
         }
 
         [HttpGet]
         public ActionResult Editar(int id)
         {
-            Contato model = DataSource.Contatos[id];
+            Contato model = dataSource.Get(id);
             return View(model);
         }
 
         [HttpPost]
         public ActionResult Editar(int id, Contato model)
         {
-            DataSource.Contatos[0] = model;
+            dataSource.Edit(model);
             return RedirectToAction("Index");
         }
 
@@ -52,7 +60,7 @@ namespace ExemploGreen.Web.Controllers
             if (!ModelState.IsValid)
                 return View(model);
 
-            DataSource.Contatos.Add(model);
+            dataSource.Add(model);
             return RedirectToAction("Index");
         }
 
