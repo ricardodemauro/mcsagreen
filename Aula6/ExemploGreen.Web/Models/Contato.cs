@@ -19,10 +19,12 @@ namespace ExemploGreen.Web.Models
         public string Sobrenome { get; set; }
 
         [DataType(DataType.PhoneNumber)]
-        [PhoneValidation(ErrorMessage = "Telefone é inválido")]
+        //[PhoneValidation(ErrorMessage = "Telefone é inválido")]
+        [Remote("CheckTelefone", "BackOffice")]
         public string Telefone { get; set; }
 
-        [Remote("CheckValidEmail", "BackOffice", ErrorMessage = "Email remote inválido")]
+        [Remote("CheckValidEmail", "BackOffice")]
+        //[EmailDomainValidator("@gmail.com")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
