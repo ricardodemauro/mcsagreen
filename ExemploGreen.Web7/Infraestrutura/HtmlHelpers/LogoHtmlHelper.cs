@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ExemploGreen.Web.Infraestrutura.HtmlHelpers
@@ -20,8 +21,7 @@ namespace ExemploGreen.Web.Infraestrutura.HtmlHelpers
 
         public static MvcHtmlString RenderTiger(this HtmlHelper helper, int width, int height)
         {
-            string currentPath = @"C:\Users\Admin\Source\Repos\mcsagreen\Aula6\ExemploGreen.Web\";
-            string fullPath = Path.Combine(currentPath, @"Content\svgs\tigre.svg");
+            string fullPath = HttpContext.Current.Server.MapPath("~/Content/svgs/tigre.svg");
             string contents = File.ReadAllText(fullPath);
             return new MvcHtmlString(contents);
         }

@@ -212,6 +212,23 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
+    <Content Include="Views\Cliente\Details.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
+    <Content Include="Views\Contato\Criar.cshtml" />
+    <Content Include="Views\Contato\Detalhe.cshtml" />
+    <Content Include="Views\Contato\Editar.cshtml" />
+    <Content Include="Views\Contato\Index.cshtml" />
+    <Content Include="Views\Contato\ListaContato.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Endereco.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\_Idade.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Endereco.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\_Menu.cshtml" />
+    <Content Include="Views\Shared\_MenuAuthenticated.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -230,8 +247,8 @@
     <Content Include="Scripts\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_LocalResources\AppResource.pt-br.resx" />
-    <Content Include="App_LocalResources\AppResource.resx" />
+    <EmbeddedResource Include="App_LocalResources\AppResource.pt-br.resx" />
+    <EmbeddedResource Include="App_LocalResources\AppResource.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
