@@ -168,6 +168,7 @@
     <Compile Include="Infraestrutura\DataAnnotations\EmailDomainValidator.cs" />
     <Compile Include="Infraestrutura\DataAnnotations\PhoneValidationAttribute.cs" />
     <Compile Include="Infraestrutura\DataAnnotations\SobrenomeValidator.cs" />
+    <Compile Include="Infraestrutura\Filters\DumbAuditFilterAttribute.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LogoHtmlHelper.cs" />
     <Compile Include="Infraestrutura\IIdEntity.cs" />

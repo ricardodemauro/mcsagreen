@@ -1,4 +1,5 @@
-﻿using ExemploGreen.Web.Models;
+﻿using ExemploGreen.Web.Infraestrutura.Filters;
+using ExemploGreen.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -9,9 +10,10 @@ using System.Web.Mvc;
 
 namespace ExemploGreen.Web.Controllers
 {
+    //[DumbAuditFilter]
     public class BackOfficeController : Controller
     {
-        // GET: BackOffice/CheckValidEmail
+        [DumbAuditFilter]
         public JsonResult CheckValidEmail(string email)
         {
             bool isValid = email.EndsWith("@green.com.br");
