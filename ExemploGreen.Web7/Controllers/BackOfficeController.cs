@@ -13,14 +13,16 @@ namespace ExemploGreen.Web.Controllers
     //[DumbAuditFilter]
     public class BackOfficeController : Controller
     {
+        private readonly Regex phoneRegex = new Regex(@"^\d{4,5}-\d{4}$", RegexOptions.Compiled);
+
         [AuditFilter]
         public JsonResult CheckValidEmail(string email)
         {
             bool isValid = email.EndsWith("@green.com.br");
             return Json(isValid, JsonRequestBehavior.AllowGet);
         }
-        private readonly Regex phoneRegex = new Regex(@"^\d{4,5}-\d{4}$", RegexOptions.Compiled);
 
+        [AuditFilter]
         public JsonResult CheckTelefone(string telefone)
         {
             return Json(phoneRegex.IsMatch(telefone), JsonRequestBehavior.AllowGet);
@@ -45,9 +47,16 @@ namespace ExemploGreen.Web.Controllers
             return View();
         }
 
-        public string CurrentCulture()
+        public string Culture()
         {
             return $"Culture {CultureInfo.CurrentCulture.Name} - CultureUI {CultureInfo.CurrentUICulture.Name}";
+        }
+
+        [AuditFilter]
+        [AppErrorFilter]
+        public ActionResult Error()
+        {
+            throw new Exception("Ops... something went wront here. Try again later");
         }
     }
 }

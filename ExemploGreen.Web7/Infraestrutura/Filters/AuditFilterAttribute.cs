@@ -41,7 +41,9 @@ namespace ExemploGreen.Web.Infraestrutura.Filters
             var controllerName = routeData.Values["controller"];
             var actionName = routeData.Values["action"];
             var message = string.Format("Controller: {0} Action: {1} MethodName: {2}", controllerName, actionName, methodName);
+
             Trace.TraceInformation("UHUUU - LogFilter: -> " + message);
+            Trace.Flush();
         }
     }
 }
