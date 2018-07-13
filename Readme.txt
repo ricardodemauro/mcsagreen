@@ -1,0 +1,1 @@
+Extension Mozilla https://addons.mozilla.org/en-US/firefox/addon/quick-accept-language-switc/

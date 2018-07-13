@@ -20,6 +20,9 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 05", "Aula 05", "{E813DC54-D1F5-48E4-A9A4-E86EA4E6AF8F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 07", "Aula 07", "{6949BBBC-766E-4082-8ABA-C381D721BD97}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploGreen.Web7", "ExemploGreen.Web7\ExemploGreen.Web7.csproj", "{C7FFA02D-E66E-4097-9804-EE05DE6E9822}"
 EndProject

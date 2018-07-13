@@ -118,12 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="AppName" xml:space="preserve">
-    <value>Green App</value>
-  </data>
-  <data name="CampoObrigatorio" xml:space="preserve">
-    <value>Required field</value>
-  </data>
-  <data name="CampoObrigatorioParse" xml:space="preserve">
-    <value>Field {0} is required</value>
+    <value>application verte</value>
   </data>
 </root>
