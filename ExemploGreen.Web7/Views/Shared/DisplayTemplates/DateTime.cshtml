@@ -1,4 +1,5 @@
-﻿@model System.DateTime
+﻿@using System.Globalization
+@model System.DateTime
 <span>
-   HA! @Model.ToString("yyyy-MM-dd")
+    HA! Formatado @Model.ToString("d", CultureInfo.CurrentUICulture)
 </span>

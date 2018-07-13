@@ -1,6 +1,7 @@
 ﻿using ExemploGreen.Web.Models;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
@@ -40,6 +41,11 @@ namespace ExemploGreen.Web.Controllers
         public ActionResult HtmlHelpers()
         {
             return View();
+        }
+
+        public string CurrentCulture()
+        {
+            return $"Culture {CultureInfo.CurrentCulture.Name} - CultureUI {CultureInfo.CurrentUICulture.Name}";
         }
     }
 }

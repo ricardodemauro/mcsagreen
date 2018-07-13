@@ -146,6 +146,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_LocalResources\AppResource.Designer.cs" />
+    <Compile Include="App_LocalResources\ValidationResources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ValidationResources.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -251,6 +256,11 @@
     <EmbeddedResource Include="App_LocalResources\AppResource.pt-br.resx" />
     <EmbeddedResource Include="App_LocalResources\AppResource.resx" />
     <EmbeddedResource Include="App_LocalResources\AppResource.en-us.resx" />
+    <EmbeddedResource Include="App_LocalResources\ValidationResources.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ValidationResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\ValidationResources.pt-br.resx" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
