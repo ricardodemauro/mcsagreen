@@ -26,5 +26,7 @@ namespace ExemploGreen.Web.Models
         [Display(Name = "Data")]
         [DataType(DataType.Date)]
         public DateTime DataNascimento { get; set; }
+
+        public string HiddendField { get; set; }
     }
 }

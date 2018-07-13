@@ -16,14 +16,14 @@ namespace ExemploGreen.Web.Infraestrutura.HtmlHelpers
 
         public static MvcHtmlString RenderLogo(this HtmlHelper helper)
         {
-            return new MvcHtmlString(LogoHTML);
+            return MvcHtmlString.Create(LogoHTML);
         }
 
         public static MvcHtmlString RenderTiger(this HtmlHelper helper, int width, int height)
         {
             string fullPath = HttpContext.Current.Server.MapPath("~/Content/svgs/tigre.svg");
             string contents = File.ReadAllText(fullPath);
-            return new MvcHtmlString(contents);
+            return MvcHtmlString.Create($"<div style='width:{width}px; heigth:{height}px'>{contents}</div>");
         }
     }
 }

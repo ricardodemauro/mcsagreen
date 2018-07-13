@@ -26,7 +26,7 @@ namespace ExemploGreen.Web.Controllers
         // GET: Cliente
         public ActionResult Index()
         {
-            return View();
+            return View(dataSource.Get());
         }
 
         // GET: Cliente/Details/5
@@ -43,7 +43,8 @@ namespace ExemploGreen.Web.Controllers
 
         // POST: Cliente/Create
         [HttpPost]
-        public ActionResult Create(Cliente model)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create([Bind(Include = "Nome, Sobrenome, Telefone, Email, DataNascimento")] Cliente model)
         {
             if (ModelState.IsValid)
             {
@@ -62,7 +63,7 @@ namespace ExemploGreen.Web.Controllers
 
         // POST: Cliente/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Cliente model)
+        public ActionResult Edit(int id, [Bind(Include = "Id, Nome, Sobrenome, Telefone, Email, DataNascimento, HiddendField")] Cliente model)
         {
             if (ModelState.IsValid)
             {
@@ -70,7 +71,7 @@ namespace ExemploGreen.Web.Controllers
                 return RedirectToAction("Index");
             }
 
-            return View();
+            return View(model);
         }
 
         // GET: Cliente/Delete/5

@@ -170,6 +170,7 @@
     <Compile Include="Infraestrutura\DataAnnotations\SobrenomeValidator.cs" />
     <Compile Include="Infraestrutura\Filters\AppErrorFilterAttribute.cs" />
     <Compile Include="Infraestrutura\Filters\AuditFilterAttribute.cs" />
+    <Compile Include="Infraestrutura\HtmlHelpers\HtmlHelperExtensions.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LogoHtmlHelper.cs" />
     <Compile Include="Infraestrutura\IIdEntity.cs" />
@@ -236,6 +237,7 @@
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_MenuAuthenticated.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\Date.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -19,7 +19,8 @@ namespace ExemploGreen.Web.Data
                     Telefone = "11 2222-4444",
                     Sobrenome = "Sobrenome teste",
                     DataNascimento = DateTime.Now.AddYears(-8),
-                    Email = "email@gree.com"
+                    Email = "email@gree.com",
+                    HiddendField = "Hidden value"
                 },
                 new Cliente
                 {
@@ -27,7 +28,8 @@ namespace ExemploGreen.Web.Data
                     Telefone = "11 1111-333",
                     Sobrenome = "Sobrenome teste 2",
                     DataNascimento = DateTime.Now.AddYears(-18),
-                    Email = "email2@gree.com"
+                    Email = "email2@gree.com",
+                    HiddendField = "Hidden value"
                 }
             });
             base.Seed();
