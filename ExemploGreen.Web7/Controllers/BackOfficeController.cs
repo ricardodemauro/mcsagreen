@@ -13,7 +13,7 @@ namespace ExemploGreen.Web.Controllers
     //[DumbAuditFilter]
     public class BackOfficeController : Controller
     {
-        [DumbAuditFilter]
+        [AuditFilter]
         public JsonResult CheckValidEmail(string email)
         {
             bool isValid = email.EndsWith("@green.com.br");

@@ -10,7 +10,7 @@ using System.Web.Routing;
 
 namespace ExemploGreen.Web.Infraestrutura.Filters
 {
-    public sealed class DumbAuditFilterAttribute : ActionFilterAttribute, IActionFilter
+    public sealed class AuditFilterAttribute : ActionFilterAttribute, IActionFilter
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
