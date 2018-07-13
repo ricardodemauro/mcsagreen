@@ -18,6 +18,12 @@ namespace ExemploGreen.Web
                 url: "{controller}/{action}/{id}",
                 defaults: new { controller = "Contato", action = "Index", id = UrlParameter.Optional }
             );
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{lang}/{controller}/{action}/{id}",
+            //    defaults: new { lang = "en-us", controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

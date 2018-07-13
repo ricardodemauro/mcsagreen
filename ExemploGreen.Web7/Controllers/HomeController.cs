@@ -10,6 +10,15 @@ namespace ExemploGreen.Web.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Language = "algum valor";
+
+            ViewData["Lang"] = "algum outro valor";
+
+            //string myLang = ViewData["Language"] as string;
+            //ViewData["VBLanguage"] = myLang;
+
+            //ViewBag.Info = TempData.ContainsKey("Info") ? TempData["Info"] : "nenhuma info";
+
             return View();
         }
 

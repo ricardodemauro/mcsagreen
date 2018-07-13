@@ -11,7 +11,7 @@ namespace ExemploGreen.Web.Controllers
         [OutputCache(CacheProfile = "CP1")]
         public string CacheActionProfile(string param1)
         {
-            HttpContext.Cache["dskdksdksdksdksd"] = "weweweew";
+            //HttpContext.Cache["dskdksdksdksdksd"] = "weweweew";
 
             return $"Cached data {DateTime.Now.ToString()} - Param1 {param1}";
         }
@@ -24,10 +24,24 @@ namespace ExemploGreen.Web.Controllers
             return $"Cached data {DateTime.Now.ToString()}";
         }
 
+        public string AddCookieData()
+        {
+            ControllerContext.HttpContext.Response.Cookies.Add(new HttpCookie("cookie", "value"));
+            return "cookie";
+        }
+
         public string CookieData()
         {
-            this.ControllerContext.HttpContext.Response.Cookies.Add(new HttpCookie("cookie", "value"));
-            return "cookie";
+            return $"Cookie Value: {Request.Cookies["mycookie"]}";
+        }
+
+        public string AddCacheData()
+        {
+            HttpContext.Cache["CacheKey"] = "Cache data";
+
+            string data = (string)HttpContext.Cache["CacheKey"];
+
+            return data;
         }
 
         public string CacheData()
@@ -39,7 +53,7 @@ namespace ExemploGreen.Web.Controllers
             return data;
         }
 
-        public string ApplicationData()
+        public string AddApplicationData()
         {
             HttpContext.Application.Lock();
             HttpContext.Application["Name"] = "Value";
@@ -48,10 +62,21 @@ namespace ExemploGreen.Web.Controllers
             return appValue;
         }
 
-        public string SessionData()
+        public string ApplicationData()
+        {
+            var appValue = (string)HttpContext.Application["Name"];
+            return appValue;
+        }
+
+        public string AddSessionData()
         {
             Session["S1"] = "session s1";
             Session.Add("S2", "session s2");
+            return string.Format("S1 {0} S2 {1}", Session["S1"], Session["S2"]);
+        }
+
+        public string SessionData()
+        {
             return string.Format("S1 {0} S2 {1}", Session["S1"], Session["S2"]);
         }
 
