@@ -1,11 +1,11 @@
-﻿@model System.Boolean
+﻿@model ExemploGreen.Web.Models.Usuario
 
 <ul class="navbar-nav ml-auto">
-    @if (Model)
+    @if (Model.Autenticado)
     {
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Olá Usuário Authenticado
+                Olá @Html.DisplayFor(m => m.Nome)
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" href="#">Meu Perfil</a>

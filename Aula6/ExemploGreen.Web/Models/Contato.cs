@@ -33,5 +33,8 @@ namespace ExemploGreen.Web.Models
         public DateTime DataNascimento { get; set; }
 
         public Endereco Endereco { get; set; }
+
+        [UIHint("_Idade")]
+        public int Idade { get; set; }
     }
 }

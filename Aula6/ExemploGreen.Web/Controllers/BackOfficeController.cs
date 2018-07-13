@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExemploGreen.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -30,7 +31,10 @@ namespace ExemploGreen.Web.Controllers
 
         public PartialViewResult AuthMenuPartial()
         {
-            return PartialView("_MenuAuthenticated", true);
+            Usuario usuario = new Usuario();
+            usuario.Nome = "Aluno";
+            usuario.Autenticado = true;
+            return PartialView("_MenuAuthenticated", usuario);
         }
 
         public ActionResult HtmlHelpers()

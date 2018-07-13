@@ -155,17 +155,20 @@
     </Compile>
     <Compile Include="Infraestrutura\DataAnnotations\EmailDomainValidator.cs" />
     <Compile Include="Infraestrutura\DataAnnotations\PhoneValidationAttribute.cs" />
+    <Compile Include="Infraestrutura\DataAnnotations\SobrenomeValidator.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LogoHtmlHelper.cs" />
     <Compile Include="Infraestrutura\IIdEntity.cs" />
     <Compile Include="Models\Endereco.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Contato.cs" />
+    <Compile Include="Models\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\svgs\tigre.svg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -215,6 +218,8 @@
     <Content Include="Views\Cliente\Delete.cshtml" />
     <Content Include="Views\Shared\_Menu.cshtml" />
     <Content Include="Views\Shared\_MenuAuthenticated.cshtml" />
+    <Content Include="Views\Shared\_Footer.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\_Idade.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
