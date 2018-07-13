@@ -58,6 +58,7 @@ namespace ExemploGreen.Web.Controllers
         // GET: Cliente/Edit/5
         public ActionResult Edit(int id)
         {
+            LoadAdditionalData();
             return View(dataSource.Get(id));
         }
 
@@ -70,7 +71,7 @@ namespace ExemploGreen.Web.Controllers
                 dataSource.Edit(model);
                 return RedirectToAction("Index");
             }
-
+            LoadAdditionalData();
             return View(model);
         }
 
@@ -91,6 +92,26 @@ namespace ExemploGreen.Web.Controllers
             }
 
             return View();
+        }
+
+        private void LoadAdditionalData()
+        {
+            // chamada no banco de dados
+
+            ViewBag.DropDownNomes = new List<SelectListItem>()
+            {
+                new SelectListItem()
+                {
+                    Text = "Nome 1",
+                    Value = "N1"
+                },
+                new SelectListItem()
+                {
+                    Text = "Nome 2",
+                    Value = "N2",
+                    Selected = true
+                },
+            };
         }
     }
 }
