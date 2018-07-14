@@ -20,14 +20,14 @@ namespace ExemploGreen.Web.Data
         protected virtual void Seed()
         { }
 
-        public T Add(T entity)
+        public virtual T Add(T entity)
         {
             entity.Id = _data.Count;
             _data.Add(entity);
             return entity;
         }
 
-        public void AddRange(params T[] entityColl)
+        public virtual void AddRange(params T[] entityColl)
         {
             foreach (T entity in entityColl)
             {
@@ -35,25 +35,25 @@ namespace ExemploGreen.Web.Data
             }
         }
 
-        public void Delete(T entity)
+        public virtual void Delete(T entity)
         {
             int index = _data.FindIndex(x => x.Id == entity.Id);
             _data[index] = null;
         }
 
-        public T Edit(T entity)
+        public virtual T Edit(T entity)
         {
             int index = _data.FindIndex(x => x.Id == entity.Id);
             _data[index] = entity;
             return entity;
         }
 
-        public T Get(int id)
+        public virtual T Get(int id)
         {
             return _data[id];
         }
 
-        public IEnumerable<T> Get()
+        public virtual IEnumerable<T> Get()
         {
             return _data.Where(x => x != null).ToArray();
         }

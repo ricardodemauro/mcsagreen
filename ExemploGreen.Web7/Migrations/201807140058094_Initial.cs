@@ -1,0 +1,31 @@
+namespace ExemploGreen.Web.Migrations
+{
+    using System;
+    using System.Data.Entity.Migrations;
+    
+    public partial class Initial : DbMigration
+    {
+        public override void Up()
+        {
+            CreateTable(
+                "dbo.Clientes",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Nome = c.String(nullable: false),
+                        Sobrenome = c.String(),
+                        Telefone = c.String(),
+                        Email = c.String(),
+                        DataNascimento = c.DateTime(nullable: false),
+                        HiddendField = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+        }
+        
+        public override void Down()
+        {
+            DropTable("dbo.Clientes");
+        }
+    }
+}

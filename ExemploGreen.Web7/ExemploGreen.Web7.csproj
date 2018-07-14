@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -165,6 +171,7 @@
     <Compile Include="Controllers\ContatoController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RedirectController.cs" />
+    <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Data\ClienteDataSource.cs" />
     <Compile Include="Data\ContatoDataSource.cs" />
     <Compile Include="Data\DataSourceBase_.cs" />
@@ -182,6 +189,11 @@
     <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LogoHtmlHelper.cs" />
     <Compile Include="Infraestrutura\IIdEntity.cs" />
+    <Compile Include="Migrations\201807140058094_Initial.cs" />
+    <Compile Include="Migrations\201807140058094_Initial.Designer.cs">
+      <DependentUpon>201807140058094_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Contato.cs" />
     <Compile Include="Models\Endereco.cs" />
@@ -278,6 +290,9 @@
       <LastGenOutput>ValidationResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="App_LocalResources\ValidationResources.pt-br.resx" />
+    <EmbeddedResource Include="Migrations\201807140058094_Initial.resx">
+      <DependentUpon>201807140058094_Initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

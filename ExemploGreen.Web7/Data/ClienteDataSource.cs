@@ -9,6 +9,8 @@ namespace ExemploGreen.Web.Data
 {
     public class ClienteDataSource : DataSourceBase<Cliente>, IDataSource<Cliente>
     {
+        private readonly AppDbContext _dbContext = new AppDbContext();
+
         protected override void Seed()
         {
             AddRange(new Cliente[]
@@ -38,5 +40,17 @@ namespace ExemploGreen.Web.Data
         private static readonly ClienteDataSource _instance = new ClienteDataSource();
 
         public static IDataSource<Cliente> GetInstance() { return _instance; }
+
+        public override Cliente Add(Cliente entity)
+        {
+            _dbContext.Cliente.Add(entity);
+            _dbContext.SaveChanges();
+            return entity;
+        }
+
+        public override IEnumerable<Cliente> Get()
+        {
+            return _dbContext.Cliente.ToList();
+        }
     }
 }

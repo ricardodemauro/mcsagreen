@@ -28,7 +28,7 @@ namespace ExemploGreen.Web.Controllers
 
         // GET: Cliente
         [AllowAnonymous]
-        [OutputCache(Duration = 30)]
+        //[OutputCache(Duration = 30)]
         public ActionResult Index()
         {
             return View(dataSource.Get());
