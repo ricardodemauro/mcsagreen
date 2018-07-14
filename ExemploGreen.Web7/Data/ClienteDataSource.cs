@@ -43,14 +43,15 @@ namespace ExemploGreen.Web.Data
 
         public override Cliente Add(Cliente entity)
         {
-            _dbContext.Cliente.Add(entity);
-            _dbContext.SaveChanges();
+            //_dbContext.Cliente.Add(entity);
+            //_dbContext.SaveChanges();
             return entity;
         }
 
         public override IEnumerable<Cliente> Get()
         {
-            return _dbContext.Cliente.ToList();
+            //return _dbContext.Cliente.ToList();
+            return base.Get();
         }
     }
 }
