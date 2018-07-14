@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using ExemploGreen.Web.Infraestrutura.Filters;
+using System.Web;
 using System.Web.Mvc;
 
 namespace ExemploGreen.Web
@@ -8,6 +9,7 @@ namespace ExemploGreen.Web
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
+            filters.Add(new GreenLoggerAttribute());
         }
     }
 }

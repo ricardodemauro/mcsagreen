@@ -1,4 +1,5 @@
 ﻿using ExemploGreen.Web.Data;
+using ExemploGreen.Web.Infraestrutura.Filters;
 using ExemploGreen.Web.Models;
 using System;
 using System.Collections.Generic;
@@ -8,6 +9,8 @@ using System.Web.Mvc;
 
 namespace ExemploGreen.Web.Controllers
 {
+    //[Authorize]
+    [AuditFilter]
     public class ClienteController : Controller
     {
         private readonly IDataSource<Cliente> dataSource;
@@ -24,18 +27,22 @@ namespace ExemploGreen.Web.Controllers
         }
 
         // GET: Cliente
+        [AllowAnonymous]
+        [OutputCache(Duration = 30)]
         public ActionResult Index()
         {
             return View(dataSource.Get());
         }
 
         // GET: Cliente/Details/5
+        [OutputCache(CacheProfile = "CP2")]
         public ActionResult Details(int id)
         {
             return View(dataSource.Get(id));
         }
 
         // GET: Cliente/Create
+        //[RequireHttps]
         public ActionResult Create()
         {
             return View();
@@ -97,7 +104,8 @@ namespace ExemploGreen.Web.Controllers
         private void LoadAdditionalData()
         {
             // chamada no banco de dados
-
+            ViewData["QualquerCoisa2"] = "Qualquer coisa tb 2";
+            ViewBag.QualquerCoisa = "Qualquer coisa tb";
             ViewBag.DropDownNomes = new List<SelectListItem>()
             {
                 new SelectListItem()

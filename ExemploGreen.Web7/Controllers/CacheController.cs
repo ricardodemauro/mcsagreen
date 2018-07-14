@@ -26,13 +26,13 @@ namespace ExemploGreen.Web.Controllers
 
         public string AddCookieData()
         {
-            ControllerContext.HttpContext.Response.Cookies.Add(new HttpCookie("cookie", "value"));
+            Response.Cookies.Add(new HttpCookie("mycookie", "value"));
             return "cookie";
         }
 
         public string CookieData()
         {
-            return $"Cookie Value: {Request.Cookies["mycookie"]}";
+            return $"Cookie Value: {Request.Cookies["mycookie"].Value}";
         }
 
         public string AddCacheData()

@@ -13,7 +13,14 @@ namespace ExemploGreen.Web.Controllers
         public ActionResult Index()
         {
             TempData["Info"] = DateTime.Now.ToString();
+
+            TempData["InfoDeNovo"] = DateTime.Now.ToString();
             return RedirectToAction("Index", "Home");
+        }
+
+        public ActionResult Index2()
+        {
+            return RedirectToAction("Detalhe", "Contato", new { id = 0 });
         }
     }
 }

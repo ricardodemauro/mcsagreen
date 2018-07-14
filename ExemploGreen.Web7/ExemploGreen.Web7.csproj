@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44349</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -146,6 +146,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_LocalResources\AppResource.Designer.cs" />
+    <Compile Include="App_LocalResources\AppValidationResource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AppValidationResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_LocalResources\ValidationResources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -172,6 +177,7 @@
     <Compile Include="Infraestrutura\DataAnnotations\SobrenomeValidator.cs" />
     <Compile Include="Infraestrutura\Filters\AppErrorFilterAttribute.cs" />
     <Compile Include="Infraestrutura\Filters\AuditFilterAttribute.cs" />
+    <Compile Include="Infraestrutura\Filters\GreenLoggerAttribute.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\HtmlHelperExtensions.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LogoHtmlHelper.cs" />
@@ -262,6 +268,11 @@
     <EmbeddedResource Include="App_LocalResources\AppResource.pt-br.resx" />
     <EmbeddedResource Include="App_LocalResources\AppResource.resx" />
     <EmbeddedResource Include="App_LocalResources\AppResource.en-us.resx" />
+    <EmbeddedResource Include="App_LocalResources\AppValidationResource.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>AppValidationResource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="App_LocalResources\AppValidationResource.fr.resx" />
     <EmbeddedResource Include="App_LocalResources\ValidationResources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>ValidationResources.Designer.cs</LastGenOutput>

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace ExemploGreen.Web.Controllers
 {
@@ -28,11 +29,11 @@ namespace ExemploGreen.Web.Controllers
             return Json(phoneRegex.IsMatch(telefone), JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Autenticar()
-        {
-            Session["auth"] = true;
-            return RedirectToActionPermanent("Index", "Contato");
-        }
+        //public ActionResult Autenticar()
+        //{
+        //    Session["auth"] = true;
+        //    return RedirectToActionPermanent("Index", "Contato");
+        //}
 
         public PartialViewResult AuthMenuPartial()
         {
@@ -57,6 +58,12 @@ namespace ExemploGreen.Web.Controllers
         public ActionResult Error()
         {
             throw new Exception("Ops... something went wront here. Try again later");
+        }
+
+        public ActionResult Autenticar()
+        {
+            FormsAuthentication.SetAuthCookie("ekeke", true);
+            return RedirectToActionPermanent("Index", "Home");
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Web;
 
 namespace ExemploGreen.Web.Infraestrutura.DataAnnotations
 {
-    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field | AttributeTargets.Parameter, AllowMultiple = false)]
+    [AttributeUsage(AttributeTargets.Property | AttributeTargets.Field, AllowMultiple = false)]
     public class EmailDomainValidator : ValidationAttribute
     {
         private string domain = "@green.com.br";

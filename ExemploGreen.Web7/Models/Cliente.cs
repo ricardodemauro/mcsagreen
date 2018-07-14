@@ -1,4 +1,5 @@
-﻿using ExemploGreen.Web.Infraestrutura;
+﻿using ExemploGreen.Web.App_LocalResources;
+using ExemploGreen.Web.Infraestrutura;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -11,7 +12,7 @@ namespace ExemploGreen.Web.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Valor é obrigatório")]
+        [Required(ErrorMessageResourceName = "CampoInvalido", ErrorMessageResourceType = typeof(AppValidationResource))]
         public string Nome { get; set; }
 
         public string Sobrenome { get; set; }
