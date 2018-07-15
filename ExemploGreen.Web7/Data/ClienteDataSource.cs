@@ -9,7 +9,7 @@ namespace ExemploGreen.Web.Data
 {
     public class ClienteDataSource : DataSourceBase<Cliente>, IDataSource<Cliente>
     {
-        private readonly AppDbContext _dbContext = new AppDbContext();
+        //private readonly AppDbContext _dbContext = new AppDbContext();
 
         protected override void Seed()
         {
@@ -45,7 +45,7 @@ namespace ExemploGreen.Web.Data
         {
             //_dbContext.Cliente.Add(entity);
             //_dbContext.SaveChanges();
-            return entity;
+            return base.Add(entity);
         }
 
         public override IEnumerable<Cliente> Get()
