@@ -14,7 +14,7 @@ namespace Green.AlbumCopa.Data
         public DbSet<Jogador> Jogador { get; set; }
 
         public AppDbContext()
-            : base("AlbumCopa")
+            : base("DataConn")
         {
 
         }
@@ -35,10 +35,6 @@ namespace Green.AlbumCopa.Data
             modelBuilder.Entity<Jogador>()
                 .Property(x => x.Pais)
                 .HasMaxLength(200);
-
-            modelBuilder.Entity<Jogador>()
-                .Property(x => x.DataCriacao)
-                .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Computed);
 
 
             base.OnModelCreating(modelBuilder);
