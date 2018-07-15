@@ -151,7 +151,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_LocalResources\AppResource.Designer.cs" />
+    <Compile Include="App_LocalResources\AppResource.Designer.cs">
+      <DependentUpon>AppResource.resx</DependentUpon>
+    </Compile>
     <Compile Include="App_LocalResources\AppValidationResource.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
