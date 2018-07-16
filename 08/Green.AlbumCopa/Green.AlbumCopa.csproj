@@ -127,13 +127,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807152107060_Add_Jogador.cs" />
-    <Compile Include="Migrations\201807152107060_Add_Jogador.Designer.cs">
-      <DependentUpon>201807152107060_Add_Jogador.cs</DependentUpon>
+    <Compile Include="Migrations\201807162208255_Inicial.cs" />
+    <Compile Include="Migrations\201807162208255_Inicial.Designer.cs">
+      <DependentUpon>201807162208255_Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201807152146429_Remove_Field_DataCriacao_Jogador.cs" />
-    <Compile Include="Migrations\201807152146429_Remove_Field_DataCriacao_Jogador.Designer.cs">
-      <DependentUpon>201807152146429_Remove_Field_DataCriacao_Jogador.cs</DependentUpon>
+    <Compile Include="Migrations\201807162222051_Jogador_AddF_Altura.cs" />
+    <Compile Include="Migrations\201807162222051_Jogador_AddF_Altura.Designer.cs">
+      <DependentUpon>201807162222051_Jogador_AddF_Altura.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Jogador.cs" />
@@ -162,11 +162,11 @@
     <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201807152107060_Add_Jogador.resx">
-      <DependentUpon>201807152107060_Add_Jogador.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807162208255_Inicial.resx">
+      <DependentUpon>201807162208255_Inicial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201807152146429_Remove_Field_DataCriacao_Jogador.resx">
-      <DependentUpon>201807152146429_Remove_Field_DataCriacao_Jogador.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201807162222051_Jogador_AddF_Altura.resx">
+      <DependentUpon>201807162222051_Jogador_AddF_Altura.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

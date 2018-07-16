@@ -7,13 +7,13 @@ namespace Green.AlbumCopa.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class Remove_Field_DataCriacao_Jogador : IMigrationMetadata
+    public sealed partial class Inicial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Remove_Field_DataCriacao_Jogador));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Inicial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201807152146429_Remove_Field_DataCriacao_Jogador"; }
+            get { return "201807162208255_Inicial"; }
         }
         
         string IMigrationMetadata.Source

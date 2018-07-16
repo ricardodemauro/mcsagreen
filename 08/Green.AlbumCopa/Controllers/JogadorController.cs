@@ -17,19 +17,26 @@ namespace Green.AlbumCopa.Controllers
         private AppDbContext db = new AppDbContext();
 
         // GET: Jogador
-        public async Task<ActionResult> Index()
+        public ActionResult Index()
         {
-            return View(await db.Jogador.ToListAsync());
+            List<Jogador> jogadores = db.Jogador.ToList();
+
+            return View(jogadores);
         }
 
         // GET: Jogador/Details/5
-        public async Task<ActionResult> Details(int? id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Jogador jogador = await db.Jogador.FindAsync(id);
+            Jogador jogador = db.Jogador.Find(id);
+
+            //jogador = db.Jogador
+            //    .Where(x => x.Id == id)
+            //    .First();
+
             if (jogador == null)
             {
                 return HttpNotFound();
@@ -48,12 +55,12 @@ namespace Green.AlbumCopa.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Create([Bind(Include = "Id,Nome,Pais,Numero,DataCriacao")] Jogador jogador)
+        public ActionResult Create(Jogador jogador)
         {
             if (ModelState.IsValid)
             {
                 db.Jogador.Add(jogador);
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
@@ -61,13 +68,13 @@ namespace Green.AlbumCopa.Controllers
         }
 
         // GET: Jogador/Edit/5
-        public async Task<ActionResult> Edit(int? id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Jogador jogador = await db.Jogador.FindAsync(id);
+            Jogador jogador = db.Jogador.Find(id);
             if (jogador == null)
             {
                 return HttpNotFound();
@@ -80,12 +87,12 @@ namespace Green.AlbumCopa.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Edit([Bind(Include = "Id,Nome,Pais,Numero,DataCriacao")] Jogador jogador)
+        public ActionResult Edit(Jogador jogador)
         {
             if (ModelState.IsValid)
             {
                 db.Entry(jogador).State = EntityState.Modified;
-                await db.SaveChangesAsync();
+                db.SaveChanges();
                 return RedirectToAction("Index");
             }
             return View(jogador);

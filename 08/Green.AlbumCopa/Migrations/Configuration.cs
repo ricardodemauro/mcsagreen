@@ -2,11 +2,8 @@ namespace Green.AlbumCopa.Migrations
 {
     using Green.AlbumCopa.Data;
     using System;
-    using System.Collections.Generic;
-    using System.Configuration;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
-    using System.IO;
     using System.Linq;
 
     internal sealed class Configuration : DbMigrationsConfiguration<Green.AlbumCopa.Data.AppDbContext>
@@ -18,11 +15,6 @@ namespace Green.AlbumCopa.Migrations
 
         protected override void Seed(Green.AlbumCopa.Data.AppDbContext context)
         {
-            //  This method will be called after migrating to the latest version.
-
-            //  You can use the DbSet<T>.AddOrUpdate() helper extension method 
-            //  to avoid creating duplicate seed data.
-
             foreach (var jogador in AlbumDataHelper.GetJogadores())
             {
                 context.Jogador.Add(new Models.Jogador
@@ -34,7 +26,5 @@ namespace Green.AlbumCopa.Migrations
             }
             context.SaveChanges();
         }
-
-
     }
 }

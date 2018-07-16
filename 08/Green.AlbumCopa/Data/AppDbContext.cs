@@ -22,6 +22,15 @@ namespace Green.AlbumCopa.Data
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Jogador>()
+                .Property(x => x.Numero)
+                .HasColumnName("NumeroDoJogador");
+
+            modelBuilder.Entity<Jogador>()
+                .Property(x => x.Altura)
+                .HasMaxLength(6);
+
+
+            modelBuilder.Entity<Jogador>()
                 .Property(x => x.Id)
                 .HasColumnName("jogardor_id")
                 .HasDatabaseGeneratedOption(DatabaseGeneratedOption.Identity);

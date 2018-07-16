@@ -15,5 +15,7 @@ namespace Green.AlbumCopa.Models
         public string Pais { get; set; }
 
         public int? Numero { get; set; }
+
+        public string Altura { get; set; }
     }
 }
