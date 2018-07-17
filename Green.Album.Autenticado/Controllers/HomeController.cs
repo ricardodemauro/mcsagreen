@@ -16,6 +16,7 @@ namespace Green.Album.Autenticado.Controllers
             return View();
         }
 
+        [Authorize(Roles ="Admin,BackOffice,Marketing")]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -31,10 +32,16 @@ namespace Green.Album.Autenticado.Controllers
         }
 
         [Authorize]
+        public string UserName()
+        {
+            return User.Identity.Name;
+        }
+
+        [Authorize]
         [HttpGet]
         public string Claims()
         {
-            var identity = (ClaimsIdentity)User.Identity;
+            ClaimsIdentity identity = (ClaimsIdentity)User.Identity;
 
             StringBuilder sb = new StringBuilder();
             foreach (var claim in identity.Claims)

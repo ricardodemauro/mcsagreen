@@ -5,9 +5,9 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
-using Green.Album.Autenticado.Models;
+using Green.Autenticacao.Models;
 
-namespace Green.Album.Autenticado
+namespace Green.Autenticacao
 {
     public partial class Startup
     {
@@ -34,7 +34,7 @@ namespace Green.Album.Autenticado
                         validateInterval: TimeSpan.FromMinutes(30),
                         regenerateIdentity: (manager, user) => user.GenerateUserIdentityAsync(manager))
                 }
-            });            
+            });
             app.UseExternalSignInCookie(DefaultAuthenticationTypes.ExternalCookie);
 
             // Enables the application to temporarily store user information when they are verifying the second factor in the two-factor authentication process.
@@ -53,10 +53,6 @@ namespace Green.Album.Autenticado
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
             //   consumerSecret: "");
-
-            //app.UseFacebookAuthentication(
-            //   appId: "261554047909628",
-            //   appSecret: "aecc3616016e766f6e48b97c8d2ace60");
 
             app.UseFacebookAuthentication(
                appId: "2101459236743973",
