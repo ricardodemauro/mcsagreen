@@ -9,9 +9,7 @@ namespace Green.Alunos.ViewModels
     public class NovoAlunoViewModel
     {
         [Required]
-        [Display]
-        [EmailAddress]
-        [Range]
+        [Display(Name = "Nome")]
         public string Nome { get; set; }
     }
 }
