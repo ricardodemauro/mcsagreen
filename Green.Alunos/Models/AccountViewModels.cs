@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace Green.Album.Autenticado.Models
+namespace Green.Alunos.Models
 {
     public class ExternalLoginConfirmationViewModel
     {
@@ -79,10 +79,6 @@ namespace Green.Album.Autenticado.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
-
-        [Required]
-        [Display(Name = "Nome Completo")]
-        public string NomeCompleto { get; set; }
     }
 
     public class ResetPasswordViewModel

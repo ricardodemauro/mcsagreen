@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 
-namespace Green.Autenticacao.Controllers
+namespace Green.Alunos.Controllers
 {
     public class HomeController : Controller
     {
@@ -13,7 +13,6 @@ namespace Green.Autenticacao.Controllers
             return View();
         }
 
-        [Authorize]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -21,7 +20,6 @@ namespace Green.Autenticacao.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Admin")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

@@ -116,7 +116,7 @@ namespace Green.AlbumCopa.Controllers
         // POST: Jogador/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> DeleteConfirmed(int id)
+        public async Task<ActionResult> DeleteConfirmed(int? id)
         {
             Jogador jogador = await db.Jogador.FindAsync(id);
             db.Jogador.Remove(jogador);
