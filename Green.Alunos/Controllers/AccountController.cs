@@ -13,6 +13,7 @@ using Green.Alunos.Models;
 namespace Green.Alunos.Controllers
 {
     [Authorize]
+    [RequireHttps]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

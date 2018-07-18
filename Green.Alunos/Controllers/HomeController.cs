@@ -24,6 +24,8 @@ namespace Green.Alunos.Controllers
         {
             ViewBag.Message = "Your contact page.";
 
+            throw new Exception("some error");
+            
             return View();
         }
     }

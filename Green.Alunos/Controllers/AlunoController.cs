@@ -8,16 +8,18 @@ using System.Web.Mvc;
 using System.Data.Entity;
 using Green.Alunos.ViewModels;
 using Green.Alunos.Domain;
+using Green.Alunos.Application;
+using Green.Alunos.Infraestrutura;
 
 namespace Green.Alunos.Controllers
 {
     public class AlunoController : Controller
     {
-        private readonly ApplicationDbContext db = ApplicationDbContext.Create();
+        private readonly AlunoApplication _application = IoC.GetAlunoApp();
 
         public async Task<ActionResult> Index()
         {
-            List<Aluno> alunos = await db.Aluno.ToListAsync();
+            List<Aluno> alunos = await _application.ListaAlunos();
             return View(alunos);
         }
 
@@ -32,8 +34,7 @@ namespace Green.Alunos.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Aluno.Add(new Aluno { Nome = alunoVm.Nome });
-                await db.SaveChangesAsync();
+                await _application.AdicionaAluno(new Aluno { Nome = alunoVm.Nome });
                 return RedirectToAction("Index");
             }
             return View(alunoVm);

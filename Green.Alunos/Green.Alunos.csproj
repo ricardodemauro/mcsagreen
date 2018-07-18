@@ -191,11 +191,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AlunoController.cs" />
+    <Compile Include="Controllers\ErrorsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infraestrutura\IoC.cs" />
     <Compile Include="Migrations\201807172243504_Aluno.cs" />
     <Compile Include="Migrations\201807172243504_Aluno.Designer.cs">
       <DependentUpon>201807172243504_Aluno.cs</DependentUpon>
@@ -223,6 +225,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -290,9 +293,17 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Green.Alunos.Application\Green.Alunos.Application.csproj">
+      <Project>{d847001f-8302-4c18-8c32-3ead13cd4278}</Project>
+      <Name>Green.Alunos.Application</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Green.Alunos.Domain\Green.Alunos.Domain.csproj">
       <Project>{d9cb00db-dfdc-4b71-97a9-f5775aaa2491}</Project>
       <Name>Green.Alunos.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Green.Alunos.Repositorio.EF\Green.Alunos.Repositorio.EF.csproj">
+      <Project>{f46ab643-f1b1-4d2e-ab7f-0e6f6f626d22}</Project>
+      <Name>Green.Alunos.Repositorio.EF</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
