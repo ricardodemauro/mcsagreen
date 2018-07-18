@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExemploGreen.Web.Infraestrutura.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -34,6 +35,19 @@ namespace ExemploGreen.Web.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        [FiltroDoLucas]
+        public string RotaLucas()
+        {
+            if (RouteData.Values.ContainsKey("ValorRANDOM"))
+            {
+                return RouteData.Values["ValorRANDOM"].ToString();
+            }
+            else
+            {
+                return "Ops nao tem";
+            }
         }
     }
 }

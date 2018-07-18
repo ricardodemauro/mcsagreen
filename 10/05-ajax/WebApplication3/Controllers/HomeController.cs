@@ -8,6 +8,8 @@ namespace WebApplication3.Controllers
 {
     public class HomeController : Controller
     {
+        private static List<Aluno> alunos = new List<Aluno>();
+
         public ActionResult Index()
         {
             return View();

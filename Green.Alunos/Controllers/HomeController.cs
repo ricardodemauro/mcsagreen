@@ -20,11 +20,27 @@ namespace Green.Alunos.Controllers
             return View();
         }
 
+        public string VariavelAmbiente()
+        {
+            return Environment.GetEnvironmentVariable("CONN_STR_ALUNOS");
+        }
+
+        [HttpPost]
+        public ActionResult Contact(int f)
+        {
+            ViewBag.Message = "Your contact page.";
+
+            //throw new Exception("some error");
+
+            return View();
+        }
+
+        [HttpGet]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";
 
-            throw new Exception("some error");
+            //throw new Exception("some error");
             
             return View();
         }

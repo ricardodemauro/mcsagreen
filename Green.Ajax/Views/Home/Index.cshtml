@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div>
+    @Ajax.ActionLink("GET Data",
+    "MyPartial",
+    new AjaxOptions
+    {
+        UpdateTargetId = "ajax-get",
+        HttpMethod = "GET",
+        InsertionMode = InsertionMode.Replace
+    })
+</div>
+
+<div id="ajax-get" style="background-color: black; height: 100px; width: 100px;">
+
+</div>
+
+<div id="ajax-post" style="background-color: lightblue; min-height: 100px; min-width: 100px;">
+
+</div>
+
+<div id="lista-alunos" style="min-height: 100px; min-width: 100px;">
+
+</div>
+
+<fieldset>
+    @Ajax.ActionLink("Carregar Alunos",
+    "GetAlunos",
+    new AjaxOptions
+    {
+        UpdateTargetId = "lista-alunos",
+        HttpMethod = "GET",
+        InsertionMode = InsertionMode.Replace
+    })
+</fieldset>
+
+<hr />
+<div>
+    @using (Ajax.BeginForm("PostAluno",
+                                new AjaxOptions
+                                {
+                                    UpdateTargetId = "ajax-post",
+                                    HttpMethod = "POST",
+                                    InsertionMode = InsertionMode.Replace
+                                }))
+    {
+        @Html.Partial("CreateAlunoPartial")
+    }
+</div>
+
+@section Scripts
+{
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+}

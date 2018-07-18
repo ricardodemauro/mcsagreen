@@ -186,6 +186,7 @@
     <Compile Include="Infraestrutura\DataAnnotations\SobrenomeValidator.cs" />
     <Compile Include="Infraestrutura\Filters\AppErrorFilterAttribute.cs" />
     <Compile Include="Infraestrutura\Filters\AuditFilterAttribute.cs" />
+    <Compile Include="Infraestrutura\Filters\FiltroDoLucas.cs" />
     <Compile Include="Infraestrutura\Filters\GreenLoggerAttribute.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\HtmlHelperExtensions.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
@@ -217,6 +218,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -228,7 +230,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
