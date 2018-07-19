@@ -52,8 +52,15 @@ namespace Green.Ajax.Controllers
         [HttpPost]
         public ActionResult PostAluno(Aluno aluno)
         {
-            alunos.Add(aluno);
-            return PartialView();
+            if (ModelState.IsValid)
+            {
+                alunos.Add(aluno);
+                return PartialView();
+            }
+            else
+            {
+                return PartialView("CreateAlunoPartial", aluno);
+            }
         }
 
         public PartialViewResult GetAlunos()
