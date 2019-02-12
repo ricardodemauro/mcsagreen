@@ -18,7 +18,21 @@
 
         function inicio() {
             let selectDom = document.createElement('select');
-            document.lastChild.append(selectDom);
+            selectDom.name = 'diasSemana';
+            selectDom.id = 'diasSemana';
+            document.body.append(selectDom);
+
+            let domingoOptions = document.createElement('option');
+            domingoOptions.value = diasSemana['1'];
+            domingoOptions.text = diasSemana['1'];
+
+            selectDom.appendChild(domingoOptions);
+
+            let segundaOptions = document.createElement('option');
+            segundaOptions.value = diasSemana['2'];
+            segundaOptions.text = diasSemana['2'];
+
+            selectDom.appendChild(segundaOptions);
         }
 
         inicio();
