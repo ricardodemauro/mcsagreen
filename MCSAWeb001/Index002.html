@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <article>
+        <header>Calculadora de idade</header>
+
+        <section>
+            <fieldset>
+                <legend>Inputs</legend>
+                <label for="anoNascimento">Ano Nascimento:</label>
+                <input id="anoNascimento" type="text" />
+            </fieldset>
+            <fieldset>
+                <legend>Outputs</legend>
+                <label for="idade">Idade:</label>
+                <input id="idade" type="text" value="0" />
+            </fieldset>
+            <button id="btnCalcular">Calcular</button>
+        </section>
+    </article>
+
+    <script>
+        function calculaIdade(anoNascimento) {
+            return 2019 - anoNascimento;
+        }
+
+        function handleBtnCalcularClick(evt) {
+            const anoNasc = Number(anoNascimento.value);
+            const calIdade = calculaIdade(anoNasc);
+            idade.value = calIdade;
+        }
+
+        document.getElementById('btnCalcular').addEventListener('click', handleBtnCalcularClick);
+    </script>
+</body>
+</html>

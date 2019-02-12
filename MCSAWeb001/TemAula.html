@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <header>Tem aula?</header>
+    <main>
+        <label for="diasSemana">Dia da Semana</label>
+        <br />
+        <select id="diasSemana">
+            <optgroup label="Fim de Semana">
+                <option value="7">Sábado</option>
+                <option value="1">Domingo</option>
+            </optgroup>
+            <option value="2">Segunda</option>
+            <option value="3">Terca</option>
+            <option value="4">Quarta</option>
+            <option value="5">Quinta</option>
+            <option value="6">Sexta</option>
+        </select>
+
+        <input type="text" id="temAula" value="Sim" />
+    </main>
+
+    <script>
+        diasSemana.addEventListener('change', calculaTemAula);
+
+        function calculaTemAula() {
+            const diaSelecionado = Number(diasSemana.value);
+            const temAula = calculaComIfElse(diaSelecionado);
+
+            const saidaDoc = document.getElementById('temAula');
+            saidaDoc.value = temAula;
+        }
+
+        function calculaComSwitch(diaSelecionado) {
+            switch (diaSelecionado) {
+                case 7:
+                case 1:
+                    return "SW-não";
+                default:
+                    return "SW-sim";
+            }
+        }
+
+        function calculaComIfElse(diaSelecionado) {
+            if (diaSelecionado === 7)
+                return 'IF-Não';
+            else if (diaSelecionado === 1)
+                return "IF-Não";
+            else
+                return "IF-Sim";
+        }
+    </script>
+</body>
+</html>

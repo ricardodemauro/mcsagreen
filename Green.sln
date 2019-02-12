@@ -75,6 +75,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Green.Samples", "Green.Samp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Green.Ajax", "Green.Ajax\Green.Ajax.csproj", "{845F9C93-7692-45FD-AAF3-2AF3BCC9FBB2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCSAWeb001", "MCSAWeb001\MCSAWeb001.csproj", "{57E69F2F-5A93-4104-B893-BFC2831A6A7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -153,6 +155,10 @@ Global
 		{845F9C93-7692-45FD-AAF3-2AF3BCC9FBB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{845F9C93-7692-45FD-AAF3-2AF3BCC9FBB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{845F9C93-7692-45FD-AAF3-2AF3BCC9FBB2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{57E69F2F-5A93-4104-B893-BFC2831A6A7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57E69F2F-5A93-4104-B893-BFC2831A6A7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57E69F2F-5A93-4104-B893-BFC2831A6A7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57E69F2F-5A93-4104-B893-BFC2831A6A7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

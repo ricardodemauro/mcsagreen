@@ -7,25 +7,35 @@
 <body>
 
     <script>
-        var minhaArray = [];
+        const minhaArray = [];
         minhaArray.push('Fabiano');
         minhaArray.push(123);
         minhaArray.push(false);
+        minhaArray.push({ 'name': 'ricardo' });
+
         console.log(minhaArray);
         console.log(minhaArray[1]);
         console.log('tamanho ' + minhaArray.length);
 
-        var cliente = {};
+        const novoArray = new Array();
+        novoArray.push('ricardo');
+        novoArray.push(true);
+        novoArray[0] = "Novo Nome";
+        console.log(novoArray);
+
+        console.log('is array: ' + Array.isArray(novoArray))
+
+        let cliente = {};
         cliente.nome = 'Fabiano';
         cliente.salario = 1000.99;
-        cliente.estadoCivil = 'burro';
-        //console.log(cliente);
+        cliente.estadoCivil = 'solteiro';
+        console.log(cliente);
 
 
         var cliente2 = {
             nome: 'Carlos',
             salario: 1000.99,
-            estadoCivil: 'inteligente'
+            estadoCivil: 'casado'
         };
 
         //console.log(cliente2);
