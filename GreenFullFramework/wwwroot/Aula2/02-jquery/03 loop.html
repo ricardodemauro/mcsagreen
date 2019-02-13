@@ -6,22 +6,29 @@
 </head>
 <body>
     <script type="text/javascript">
-        var data = [1, 2, 4, 5, 6, 7];
+        const data = [1, 2, 4, 5, 6, 7];
 
-        for (var i = 0; i < data.length; i++) {
+        for (let i = 0; i < data.length; i++) {
             console.log("data " + i + " value " + data[i]);
         }
 
-        var dataobj = {
-            name: 'denis',
-            lastname: 'silva'
+        for (let i = data.length - 1; i < 0; i--) {
+            console.log("data " + i + " value " + data[i]);
         }
+
+        const dataobj = {
+            name: 'denis',
+            lastname: 'silva',
+            idade: 8
+        }
+
+        console.log(dataobj['name']);
 
         for (p in dataobj) {
             console.log('data member ' + p + " data value " + dataobj[p]);
         }
 
-        var i = 0;
+        let i = 0;
         do {
             console.log('do while ' + i);
             i++;

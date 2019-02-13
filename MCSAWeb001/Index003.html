@@ -6,15 +6,65 @@
 </head>
 <body>
     <header>Vamos popular os dias da semana?</header>
-    <input type="number" value="1" />
-    <button onclick="addDiaSemana">Adicionar</button>
+    <input type="number" value="1" name="diaSemana" />
+    <button onclick="adicionarDiaSemana()">Adicionar</button>
 
     <script>
         const diasSemana = {
             '1': 'Domingo',
             '2': 'Segunda',
-            '3': 'Terca'
+            '3': 'Terca',
+            '4': 'Quarta',
+            '5': 'Quinta',
+            '6': 'Sexta',
+            '7': 'Sábado'
         };
+
+        function criarOption(texto, value) {
+            let domingoOptions = document.createElement('option');
+            domingoOptions.value = value;
+            domingoOptions.text = texto;
+
+            const selectDom = document.getElementById('diasSemana');
+            selectDom.appendChild(domingoOptions);
+        }
+
+        function adicionarDiaSemana() {
+            const valorDigitado = document.getElementsByName('diaSemana')[0].value;
+            let dSemana = null;
+            switch (valorDigitado) {
+                case '1':
+                    dSemana = diasSemana['1'];
+                    criarOption(dSemana, '1');
+                    break;
+                case '2':
+                    dSemana = diasSemana['2'];
+                    criarOption(dSemana, '2');
+                    break;
+                case '3':
+                    dSemana = diasSemana['3'];
+                    criarOption(dSemana, '3');
+                    break;
+                case '4':
+                    dSemana = diasSemana['4'];
+                    criarOption(dSemana, '4');
+                    break;
+                case '5':
+                    dSemana = diasSemana['5'];
+                    criarOption(dSemana, '5');
+                    break;
+                case '6':
+                    dSemana = diasSemana['6'];
+                    criarOption(dSemana, '6');
+                    break;
+                case '7':
+                    dSemana = diasSemana['7'];
+                    criarOption(dSemana, '7');
+                    break;
+                default:
+                    return;
+            }
+        }
 
         function inicio() {
             let selectDom = document.createElement('select');
@@ -33,6 +83,12 @@
             segundaOptions.text = diasSemana['2'];
 
             selectDom.appendChild(segundaOptions);
+
+            let tercaOptions = document.createElement('option');
+            tercaOptions.value = diasSemana['3'];
+            tercaOptions.text = diasSemana['3'];
+
+            selectDom.appendChild(tercaOptions);
         }
 
         inicio();
