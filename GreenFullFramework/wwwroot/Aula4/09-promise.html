@@ -1,0 +1,46 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>09-promise</title>
+</head>
+<body>
+    <script>
+        //arrow function
+        let fnSomar = (d1, d2) => {
+            return Number(d1) + Number(d2);
+        };
+
+        //arrow function
+        let fnDobrar = d1 => Number(d1) * 2;
+
+        //arrow function que retonar uma promise
+        let somePromise = data => new Promise((resolve, reject) => {
+            // se nao for numerico
+            if (isNaN(data)) {
+                reject(Error('nao eh numerico'))
+            }
+            else {
+                resolve(Number(data) * 2);
+            }
+        });
+
+
+        //com sucesso
+        somePromise(12)
+            .then(resultado => console.log(resultado))
+            .catch(error => console.log('deu algo errado', error));
+
+        //intencionalmente gerado erro
+        somePromise('abc')
+            .then(resultado => console.log(resultado))
+            .catch(error => console.log('deu algo errado', error));
+
+        //com sucesso
+        somePromise(32)
+            .then(resultado => console.log(resultado))
+            .catch(error => console.log('deu algo errado', error));
+
+        console.log('ultima linha');
+    </script>
+</body>
+</html>
