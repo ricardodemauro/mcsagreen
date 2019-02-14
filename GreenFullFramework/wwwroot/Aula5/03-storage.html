@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>03-sessionStorage</title>
+</head>
+<body>
+    <p id="localStorageP"></p>
+
+    <p id="sessionStorageP"></p>
+
+    <button id="sessionStorageMais">Session Storage +1</button>
+
+    <button id="localStorageMais">Local Storage +1</button>
+
+    <script>
+        class LocalStorageSample {
+            constructor() {
+                localStorage.setItem("lastname", "Smith");
+            }
+
+            adicionar() {
+                if (localStorage.clickcount) {
+                    localStorage.clickcount = Number(localStorage.clickcount) + 1;
+                } else {
+                    localStorage.clickcount = 1;
+                }
+
+                this.render();
+            }
+
+            adicionar2() {
+                if (localStorage['clickcount']) {
+                    localStorage['clickcount'] = Number(localStorage['clickcount']) + 1;
+                } else {
+                    localStorage['clickcount'] = 1;
+                }
+
+                this.render();
+            }
+
+            render() {
+                localStorageP.innerHTML = `local clicked ${localStorage.clickcount} time(s).`;
+            }
+        }
+
+        const localApp = new LocalStorageSample();
+        localStorageMais.addEventListener('click', () => localApp.adicionar());
+    </script>
+
+    <script>
+        class SessionStorageSample {
+            constructor() {
+                sessionStorage.setItem("lastname", "Smith");
+            }
+
+            adicionar() {
+                if (sessionStorage.clickcount) {
+                    sessionStorage.clickcount = Number(sessionStorage.clickcount) + 1;
+                } else {
+                    sessionStorage.clickcount = 1;
+                }
+
+                this.render();
+            }
+
+            adicionar2() {
+                if (sessionStorage['clickcount']) {
+                    sessionStorage['clickcount'] = Number(sessionStorage['clickcount']) + 1;
+                } else {
+                    sessionStorage['clickcount'] = 1;
+                }
+
+                this.render();
+            }
+
+            render() {
+                sessionStorageP.innerHTML = `session clicked ${sessionStorage.clickcount} time(s).`;
+            }
+        }
+
+        const sessionApp = new SessionStorageSample();
+        sessionStorageMais.addEventListener('click', () => sessionApp.adicionar());
+    </script>
+</body>
+</html>
