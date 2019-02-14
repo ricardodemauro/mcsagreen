@@ -19,7 +19,7 @@
                 </div>
                 <div>
                     <label for="id-idade">Idade:</label>
-                    <input type="text" id="id-idade" name="idade" required />
+                    <input type="number" id="id-idade" name="idade" required min="18" max="100" />
                 </div>
                 <div>
                     <label for="id-username">User:</label>
@@ -27,7 +27,7 @@
                 </div>
                 <div>
                     <label for="id-username">Password:</label>
-                    <input type="password" name="password" id="id-password" />
+                    <input type="password" name="password" id="id-password" required pattern="[a-z]+[@1]" />
                 </div>
             </fieldset>
             <button type="submit" value="Enviar">Enviar</button>
