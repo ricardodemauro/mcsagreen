@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Todo List</title>
+</head>
+<body>
+    <ul id="todo"></ul>
+
+    <script>
+        const url = 'http://www.mocky.io/v2/5c62e8323000006000019b09';
+
+        let recuperarTodoList = async function (url) {
+            const resultadoFetch = await fetch(url, { method: 'GET' });
+
+            const resultadoJson = await resultadoFetch.json();
+
+            for (let i = 0; i < resultadoJson.todos.length; i++) {
+                let item = document.createElement('p');
+                item.innerText = resultadoJson.todos[i].name;
+
+                todo.appendChild(item);
+            }
+        }
+
+        recuperarTodoList(url);
+
+                //fetch(url, { method: 'GET' })
+                //    .then(response => response.json())
+                //    .then(json => {
+                //        for (let i = 0; i < json.todos.length; i++) {
+                //            let item = document.createElement('p');
+                //            item.innerText = json.todos[i].name;
+
+                //            todo.appendChild(item);
+                //        }
+                //    })
+                //    .catch(e => console.error('deu erro aqui ó', e));
+    </script>
+</body>
+</html>

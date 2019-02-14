@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <script>
+        var carro = function (portas) {
+            this._portas = portas;
+            this._posicao = 0;
+
+            this.andar = function () {
+                this._posicao += 1;
+            }
+        };
+
+        class CarroV2 {
+            constructor(portas) {
+                this.portas = portas;
+                this.posicao = 0;
+            }
+
+            andar() {
+                this.posicao += 1;
+            }
+        }
+
+        class CarroEletrico extends CarroV2 {
+            constructor(portas, voltagem) {
+                super(portas);
+
+                this.voltagem = voltagem;
+                this.carga = 0;
+            }
+
+            carregar() {
+                this.carga += this.voltagem;
+            }
+        }
+    </script>
+</body>
+</html>

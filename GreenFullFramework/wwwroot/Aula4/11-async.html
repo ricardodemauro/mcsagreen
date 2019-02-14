@@ -5,13 +5,13 @@
 </head>
 <body>
     <script>
-        let myAsyncFn = async function (ur1) {
+        let myAsyncFn = async function (url) {
             try {
-                let result = await fetch('http://www.mocky.io/v2/5c62e8323000006000019b09');
-                console.log(result);
+                let result = await fetch(url);
+                console.log('resultado do fetch()', result);
 
                 let json = await result.json();
-                console.log(json);
+                console.log('resultado to json()', json);
             }
             catch (error) {
                 console.log('error', error);

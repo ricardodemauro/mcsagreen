@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+
+    <style>
+        #anime {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+        }
+
+            #anime:hover {
+                animation-name: animeGreen;
+                animation-duration: 5s;
+                animation-timing-function: linear;
+                width: 200px;
+                height: 200px;
+            }
+
+        @keyframes animeGreen {
+            0% {
+                width: 100px;
+                height: 100px;
+            }
+
+            50% {
+                width: 200px;
+                height: 100px;
+            }
+
+            100% {
+                width: 200px;
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="anime"></div>
+</body>
+</html>

@@ -67,6 +67,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AJAX.html" />
+    <Content Include="Animacao.html" />
+    <Content Include="Animacao2.html" />
     <Content Include="Index001.html" />
     <Content Include="Index002.html" />
     <Content Include="Index003.html" />
