@@ -26,6 +26,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExemploGreen.Web5", "ExemploGreen.Web5\ExemploGreen.Web5.csproj", "{C6A49E66-94BD-4A2B-B551-E2BACAB1516F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D80A60F-51CA-49CA-9EA5-6EA94BAB9346}"
+	ProjectSection(SolutionItems) = preProject
+		WebFotosRequisitos.txt = WebFotosRequisitos.txt
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{1FE30A21-2842-4865-80BA-B5954AB87D69}"
 	ProjectSection(SolutionItems) = preProject
@@ -78,6 +81,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCSAWeb001", "MCSAWeb001\MCSAWeb001.csproj", "{57E69F2F-5A93-4104-B893-BFC2831A6A7C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebListaDeCompras", "WebListaDeCompras\WebListaDeCompras.csproj", "{8428D330-1B06-44CA-913F-A9D25C21E3A5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebFotos", "WebFotos\WebFotos.csproj", "{D38A7F5D-DEFE-4F7F-992C-BDE27AB354CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -165,6 +170,10 @@ Global
 		{8428D330-1B06-44CA-913F-A9D25C21E3A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8428D330-1B06-44CA-913F-A9D25C21E3A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8428D330-1B06-44CA-913F-A9D25C21E3A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D38A7F5D-DEFE-4F7F-992C-BDE27AB354CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D38A7F5D-DEFE-4F7F-992C-BDE27AB354CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D38A7F5D-DEFE-4F7F-992C-BDE27AB354CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D38A7F5D-DEFE-4F7F-992C-BDE27AB354CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

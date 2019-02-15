@@ -1,0 +1,34 @@
+usuario deve ser logar no sistema
+
+podera ver galeria de fotos
+
+podera fazer upload de fotos com titulo
+e descricao
+
+
+/login
+/logout
+/galeria
+/adicionar-foto
+
+usuario
+	-nome
+	-email
+	-login
+	-senha
+
+foto
+	-id
+	-descricao
+	-titulo
+	-binario foto
+	-data publicacao
+
+UsuarioController
+	- Login
+	- LogOut
+	- Registrar
+
+FotoController
+	- Listar
+	- Upload
