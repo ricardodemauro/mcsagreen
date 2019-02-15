@@ -2,9 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 
-<section class="row">
+<section class="jumbotron">
     <div class="col-md-1">
         <!--<button>Login</button>-->
-        @Html.ActionLink("LogIn", "Login", "Usuario")
+        @Html.ActionLink("LogIn", "Login", new { controller = "Usuario" }, new { @class = "btn btn-primary", role = "button" })
     </div>
 </section>
