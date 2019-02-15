@@ -28,6 +28,10 @@
                 this.render();
             }
 
+            remover() {
+                localStorage.removeItem('clickcount');
+            }
+
             adicionar2() {
                 if (localStorage['clickcount']) {
                     localStorage['clickcount'] = Number(localStorage['clickcount']) + 1;

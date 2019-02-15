@@ -9,7 +9,7 @@
             }
 
             iniciarWorker() {
-                if (typeof (Worker) !== "undefined") {
+                if (typeof (Worker) !== "undefined") { //valida se o browser possui suporte
                     if (this.worker === null) {
                         this.worker = new Worker("02-Worker.js");
                     }
