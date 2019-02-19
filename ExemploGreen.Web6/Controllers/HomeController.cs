@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExemploGreen.Web.Infraestrutura.Filters;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -13,6 +14,8 @@ namespace ExemploGreen.Web.Controllers
             return View();
         }
 
+        [Authorize(Roles = "administrador")]
+        [LogActionFilter]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -20,6 +23,7 @@ namespace ExemploGreen.Web.Controllers
             return View();
         }
 
+        [Authorize(Roles = "designers")]
         public ActionResult Contact()
         {
             ViewBag.Message = "Your contact page.";

@@ -11,7 +11,7 @@ namespace ExemploGreen.Web.Infraestrutura.HtmlHelpers
     {
         public static MvcHtmlString LabelGreen(this HtmlHelper helper, string target, string text)
         {
-            string value = string.Format("<label for='{0}'>Hello Moto {1}</label>", target, text);
+            string value = string.Format("<label for='{0}'>Hello From Green {1}</label>", target, text);
             return new MvcHtmlString(value);
         }
     }

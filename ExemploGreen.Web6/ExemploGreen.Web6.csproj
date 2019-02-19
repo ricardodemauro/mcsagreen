@@ -164,6 +164,7 @@
     </Compile>
     <Compile Include="Infraestrutura\CustomerControllerFactory.cs" />
     <Compile Include="Infraestrutura\DataAnnotations\EmailDomainValidator.cs" />
+    <Compile Include="Infraestrutura\DataAnnotations\NomeValidator.cs" />
     <Compile Include="Infraestrutura\DataAnnotations\PhoneValidationAttribute.cs" />
     <Compile Include="Infraestrutura\DataAnnotations\SobrenomeValidator.cs" />
     <Compile Include="Infraestrutura\Filters\LogActionFilter.cs" />
