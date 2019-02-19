@@ -17,7 +17,7 @@ namespace ExemploGreen.Web.Models
         public string Sobrenome { get; set; }
 
         [DataType(DataType.PhoneNumber)]
-        [RegularExpression(@"^\d{4,5}-\d{4}$", ErrorMessage = "Telefone inválido")]
+        [RegularExpression(@"^\d{4,5}-\d{4}$", ErrorMessage = "{0} inválido. Formator deverá ser {1}")]
         public string Telefone { get; set; }
 
         [DataType(DataType.EmailAddress)]

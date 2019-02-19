@@ -13,9 +13,11 @@ namespace ExemploGreen.Web.Models
     {
         public int Id { get; set; }
 
-        [Required(ErrorMessage = "Valor é obrigatório")]
+        [Required(ErrorMessage = "Algo de errado")]
         public string Nome { get; set; }
 
+        [Required]
+        [StringLength(100, MinimumLength = 10, ErrorMessage = "Ultrapassou tamanho máximo")]
         public string Sobrenome { get; set; }
 
         [DataType(DataType.PhoneNumber)]
@@ -23,8 +25,8 @@ namespace ExemploGreen.Web.Models
         [Remote("CheckTelefone", "BackOffice")]
         public string Telefone { get; set; }
 
-        [Remote("CheckValidEmail", "BackOffice")]
-        //[EmailDomainValidator("@gmail.com")]
+        //[Remote("CheckValidEmail", "BackOffice")]
+        [EmailDomainValidator("@gmail.com")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
@@ -35,6 +37,7 @@ namespace ExemploGreen.Web.Models
         public Endereco Endereco { get; set; }
 
         [UIHint("_Idade")]
+        [Range(18, 64, ErrorMessage = "Fora do range. Range é entre {3} e {4} ")]
         public int Idade { get; set; }
     }
 }
