@@ -10,6 +10,7 @@ namespace ExemploGreen.Web
         {
             filters.Add(new HandleErrorAttribute());
             filters.Add(new GreenLoggerAttribute());
+            filters.Add(new FiltroDoLucas());
         }
     }
 }
