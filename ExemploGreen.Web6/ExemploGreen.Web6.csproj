@@ -19,7 +19,7 @@
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <Use64BitIISExpress />
-    <IISExpressSSLPort />
+    <IISExpressSSLPort>44390</IISExpressSSLPort>
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
@@ -170,6 +170,7 @@
     <Compile Include="Infraestrutura\Filters\LogActionFilter.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LogoHtmlHelper.cs" />
+    <Compile Include="Infraestrutura\HtmlHelpers\UrlHelper.cs" />
     <Compile Include="Infraestrutura\IIdEntity.cs" />
     <Compile Include="Models\Cliente.cs" />
     <Compile Include="Models\Contato.cs" />

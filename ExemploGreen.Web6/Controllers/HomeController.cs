@@ -7,15 +7,16 @@ using System.Web.Mvc;
 
 namespace ExemploGreen.Web.Controllers
 {
+    [LogActionFilter]
+    [Authorize]
     public class HomeController : Controller
     {
+        [AllowAnonymous]
         public ActionResult Index()
         {
             return View();
         }
 
-        [Authorize(Roles = "administrador")]
-        [LogActionFilter]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

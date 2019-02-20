@@ -26,11 +26,27 @@ namespace ExemploGreen.Web.Controllers
         // GET: Contato
         public ActionResult Index()
         {
+            ViewBag.Title = "Meu titulo lega";
+            ViewBag.H1 = "Meu h1 maneiro";
+            ViewBag.Idade = 18;
+            ViewBag.Select = new Contato()
+            {
+                Id = 10,
+                Nome = "Vindo do viewbag"
+            };
+
+            ViewBag._keke = "ekeke";
+
+
+            ViewData["Title"] = "neoenoenoe";
+
             return View(dataSource.Get());
         }
 
         public ActionResult Detalhe(int id)
         {
+            ViewBag.linguaDoUsuairo = ControllerContext.RouteData.Values["lang"] as string;
+
             Contato model = dataSource.Get(id);
             return View(model);
         }

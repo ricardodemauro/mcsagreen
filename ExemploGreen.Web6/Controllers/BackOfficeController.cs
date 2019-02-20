@@ -29,11 +29,12 @@ namespace ExemploGreen.Web.Controllers
             return RedirectToActionPermanent("Index", "Contato");
         }
 
+        [ChildActionOnly]
         public PartialViewResult AuthMenuPartial()
         {
             Usuario usuario = new Usuario();
             usuario.Nome = "Aluno";
-            usuario.Autenticado = true;
+            usuario.Autenticado = false;
             return PartialView("_MenuAuthenticated", usuario);
         }
 

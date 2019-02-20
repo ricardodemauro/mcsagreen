@@ -20,10 +20,11 @@
                 @Html.RenderLogo()
             </div>
             <div class="navbar-collapse collapse">
-                @Html.Partial("_Menu")
-                @*@{Html.RenderPartial("_Menu");}*@
-                @Html.Action("AuthMenuPartial", "BackOffice")
-                @*@{Html.RenderAction("_Menu"); }*@
+                @*@Html.Partial("_Menu")*@
+                @{Html.RenderPartial("_Menu");}
+
+                @*@Html.Action("AuthMenuPartial", "BackOffice")*@
+                @{Html.RenderAction("AuthMenuPartial", "BackOffice"); }
             </div>
         </div>
     </div>

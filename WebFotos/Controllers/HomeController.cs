@@ -10,6 +10,7 @@ namespace WebFotos.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.SystemTime = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
             return View();
         }
 

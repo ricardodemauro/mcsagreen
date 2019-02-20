@@ -4,7 +4,15 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index - @AppResource.AppName</h2>
+<h2>@ViewBag.H1 - @AppResource.AppName</h2>
+
+<p>@ViewBag.Title</p>
+
+<p>Minha idade: @ViewBag.Idade</p>
+
+<p>Hello from viewbag</p>
+<hr />
+<p>@ViewBag.Select.Nome</p>
 
 <p>
     @Html.ActionLink("Novo", "Criar")
@@ -61,7 +69,10 @@
             </td>
             <td>
                 @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
-                @Html.ActionLink("Detalhe", "Detalhe", new { id = item.Id })
+                @*@Html.ActionLink("Detalhe", "Detalhe", new { id = item.Id })*@
+                @*@Html.ActionLink()*@
+
+                <a href='@Url.Action("detalhes", new { routeName = "ContatoRoute", id = item.Id, name = item.Nome })'>Link</a>
             </td>
         </tr>
     }
