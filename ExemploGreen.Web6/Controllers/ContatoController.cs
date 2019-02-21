@@ -65,6 +65,20 @@ namespace ExemploGreen.Web.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpPost]
+        public PartialViewResult EditAjax(Contato model)
+        {
+            if(ModelState.IsValid == false)
+            {
+                return PartialView("EditContatoPartial", model);
+            }
+            else
+            {
+                dataSource.Edit(model);
+                return PartialView("EditContatoPartial", new Contato());
+            }
+        }
+
         public ActionResult Criar()
         {
             return View();

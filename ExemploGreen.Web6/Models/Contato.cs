@@ -17,7 +17,7 @@ namespace ExemploGreen.Web.Models
         public string Nome { get; set; }
 
         [Required]
-        [StringLength(100, MinimumLength = 10, ErrorMessage = "Ultrapassou tamanho máximo")]
+        [StringLength(100, MinimumLength = 10, ErrorMessage = "campo {0} inválido. entre {1} e {2}")]
         public string Sobrenome { get; set; }
 
         [DataType(DataType.PhoneNumber)]
@@ -25,8 +25,8 @@ namespace ExemploGreen.Web.Models
         [Remote("CheckTelefone", "BackOffice")]
         public string Telefone { get; set; }
 
-        //[Remote("CheckValidEmail", "BackOffice")]
-        [EmailDomainValidator("@gmail.com")]
+        [Remote("CheckValidEmail", "BackOffice")]
+        //[EmailDomainValidator("@gmail.com")]
         [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 

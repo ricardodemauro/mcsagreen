@@ -1,5 +1,7 @@
-﻿<ul class="nav navbar-nav">
+﻿@*<ul class="nav navbar-nav">
     <li>@Html.ActionLink("Home", "Index", "Home")</li>
     <li>@Html.ActionLink("Contatos", "Index", "Contato")</li>
     <li>@Html.ActionLink("Clientes", "Index", "Cliente")</li>
-</ul>
+</ul>*@
+
+@Html.MvcSiteMap().Menu()

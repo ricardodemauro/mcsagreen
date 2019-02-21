@@ -1,8 +1,11 @@
-﻿using System;
+﻿using ExemploGreen.Web.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Caching;
 using System.Web.Mvc;
+using System.Web.UI;
 
 namespace ExemploGreen.Web.Controllers
 {
@@ -17,11 +20,10 @@ namespace ExemploGreen.Web.Controllers
         }
 
         [OutputCache(Duration = 60,
-            Location = System.Web.UI.OutputCacheLocation.Server,
-            NoStore = true)]
-        public string CacheAction()
+            Location = OutputCacheLocation.Server, VaryByParam = "name")]
+        public string CacheAction(string name)
         {
-            return $"Cached data {DateTime.Now.ToString()}";
+            return $"Cached data {DateTime.Now.ToString()} - {name}";
         }
 
         public string AddCookieData()
@@ -38,6 +40,16 @@ namespace ExemploGreen.Web.Controllers
         public string AddCacheData()
         {
             HttpContext.Cache["CacheKey"] = "Cache data";
+
+            HttpContext.Cache.Add("CacheKey",
+                new Cliente(),
+                null,
+                DateTime.Now.AddMinutes(10),
+                TimeSpan.MinValue, 
+                CacheItemPriority.Normal, 
+                null);
+
+            HttpContext.Cache.Remove("CacheKey");
 
             string data = (string)HttpContext.Cache["CacheKey"];
 

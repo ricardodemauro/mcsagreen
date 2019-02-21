@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ExemploGreen.Web.Models
 {
@@ -14,6 +15,7 @@ namespace ExemploGreen.Web.Models
         [Required(ErrorMessage = "Valor é obrigatório")]
         public string Nome { get; set; }
 
+        [Remote("CheckLastName", "BackOffice", ErrorMessage = "Nao gostei")]
         public string Sobrenome { get; set; }
 
         [DataType(DataType.PhoneNumber)]

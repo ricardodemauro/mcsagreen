@@ -9,11 +9,11 @@
     {
         UpdateTargetId = "ajax-get",
         HttpMethod = "GET",
-        InsertionMode = InsertionMode.Replace
+        InsertionMode = InsertionMode.ReplaceWith
     })
 </div>
 
-<div id="ajax-get" style="background-color: black; height: 100px; width: 100px;">
+<div id="ajax-get" style="background-color: red; height: 100px; width: 100px;">
 
 </div>
 
@@ -41,12 +41,14 @@
     @using (Ajax.BeginForm("PostAluno",
                                 new AjaxOptions
                                 {
-                                    UpdateTargetId = "ajax-post",
+                                    UpdateTargetId = "formulario",
                                     HttpMethod = "POST",
                                     InsertionMode = InsertionMode.Replace
                                 }))
     {
-        @Html.Partial("CreateAlunoPartial")
+        <div id="formulario">
+            @Html.Partial("CreateAlunoPartial")
+        </div>
     }
 </div>
 

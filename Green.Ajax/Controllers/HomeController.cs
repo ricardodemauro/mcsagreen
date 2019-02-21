@@ -55,7 +55,7 @@ namespace Green.Ajax.Controllers
             if (ModelState.IsValid)
             {
                 alunos.Add(aluno);
-                return PartialView();
+                return PartialView("CreateAlunoPartial");
             }
             else
             {

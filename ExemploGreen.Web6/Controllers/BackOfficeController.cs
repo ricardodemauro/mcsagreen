@@ -10,6 +10,12 @@ namespace ExemploGreen.Web.Controllers
 {
     public class BackOfficeController : Controller
     {
+        public JsonResult CheckLastName(string Sobrenome)
+        {
+            bool isValid = Sobrenome == "Mauro";
+            return Json(isValid, JsonRequestBehavior.AllowGet);
+        }
+
         // GET: BackOffice/CheckValidEmail
         public JsonResult CheckValidEmail(string email)
         {

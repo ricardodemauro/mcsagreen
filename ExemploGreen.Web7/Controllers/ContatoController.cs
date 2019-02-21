@@ -24,6 +24,7 @@ namespace ExemploGreen.Web.Controllers
         }
 
         // GET: Contato
+        [OutputCache(Duration = 60)]
         public ActionResult Index()
         {
             return View(dataSource.Get());

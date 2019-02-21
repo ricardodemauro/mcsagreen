@@ -9,8 +9,8 @@ namespace ExemploGreen.Web
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            filters.Add(new GreenLoggerAttribute());
-            filters.Add(new FiltroDoLucas());
+            //filters.Add(new GreenLoggerAttribute());
+            //filters.Add(new FiltroDoLucas());
         }
     }
 }
