@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "XSSAttack";
+}
+
+<h2>XSSAttack</h2>
+
+<div class="messages">@Ajax.JavaScriptStringEncode(ViewBag.Msg)</div>
+<div class="messages">@ViewBag.Msg</div>
+<div class="messages">@Html.Raw(ViewBag.Msg)</div>
+
+<code>
+    http://localhost/Default1/?msg=Jon\x3cscript\x3e%20alert(\x27pwnd\x27)%20\x3c/script\x3e
+    http://localhost:50240/Home/XSSAttack?msg=Jon<script>alert("pw")</script\>
+</code>
+

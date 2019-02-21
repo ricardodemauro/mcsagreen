@@ -32,6 +32,14 @@ namespace Green.Ajax.Controllers
         }
 
         [HttpGet]
+        [ValidateInput(false)]
+        public ActionResult XSSAttack(string msg)
+        {
+            ViewBag.Msg = msg;
+            return View();
+        }
+
+        [HttpGet]
         public PartialViewResult MyPartial()
         {
             return PartialView();
