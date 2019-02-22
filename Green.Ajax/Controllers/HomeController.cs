@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Green.Ajax.Controllers
 {
+    [RequireHttps]
     public class HomeController : Controller
     {
         private static List<Aluno> alunos = new List<Aluno>();
