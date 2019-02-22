@@ -43,6 +43,7 @@ namespace ExemploGreen.Web.Controllers
 
         // POST: Cliente/Create
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(Cliente model)
         {
             if (ModelState.IsValid)

@@ -28,7 +28,10 @@ namespace ExemploGreen.Web.Controllers
 
         public string AddCookieData()
         {
-            Response.Cookies.Add(new HttpCookie("mycookie", "value"));
+            var cookie = new HttpCookie("mycookie", "value");
+            cookie.Expires = DateTime.Now.AddMinutes(10);
+            cookie.HttpOnly = true;
+            Response.Cookies.Add(cookie);
             return "cookie";
         }
 
@@ -45,8 +48,8 @@ namespace ExemploGreen.Web.Controllers
                 new Cliente(),
                 null,
                 DateTime.Now.AddMinutes(10),
-                TimeSpan.MinValue, 
-                CacheItemPriority.Normal, 
+                TimeSpan.MinValue,
+                CacheItemPriority.Normal,
                 null);
 
             HttpContext.Cache.Remove("CacheKey");
@@ -80,16 +83,24 @@ namespace ExemploGreen.Web.Controllers
             return appValue;
         }
 
-        public string AddSessionData()
+        public string AddSessionData(string name = null)
         {
             Session["S1"] = "session s1";
             Session.Add("S2", "session s2");
-            return string.Format("S1 {0} S2 {1}", Session["S1"], Session["S2"]);
+
+            Session["query"] = name;
+            return string.Format("S1 {0} S2 {1} Query {2}",
+                Session["S1"],
+                Session["S2"],
+                Session["query"]);
         }
 
         public string SessionData()
         {
-            return string.Format("S1 {0} S2 {1}", Session["S1"], Session["S2"]);
+            return string.Format("S1 {0} S2 {1} Query {2}",
+                Session["S1"],
+                Session["S2"],
+                Session["query"]);
         }
 
         public string AbadonaSession()
