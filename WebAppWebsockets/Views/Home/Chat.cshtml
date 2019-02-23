@@ -5,6 +5,7 @@
 <div class="container">
     <input type="text" id="message" />
     <input type="button" id="sendmessage" value="Send" />
+    <input type="button" id="broadcast" value="Broadcast" />
     <input type="hidden" id="displayname" />
     <ul id="discussion"></ul>
 </div>
@@ -39,6 +40,10 @@
                     chat.server.send($('#displayname').val(), $('#message').val());
                     // Clear text box and reset focus for next comment.
                     $('#message').val('').focus();
+                });
+
+                $("#broadcast").click(function () {
+                    chat.server.broadcastHelloWorld('brother');
                 });
             });
         });

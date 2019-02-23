@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace ExemploGreen.Web.Infraestrutura.Filters
 {
-    public class FiltroDoLucas : ActionFilterAttribute, IActionFilter
+    public class LanguageFilterAttribute : ActionFilterAttribute, IActionFilter
     {
         public override void OnActionExecuting(ActionExecutingContext filterContext)
         {
@@ -15,10 +15,6 @@ namespace ExemploGreen.Web.Infraestrutura.Filters
 
             System.Threading.Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo(lang);
             System.Threading.Thread.CurrentThread.CurrentUICulture = CultureInfo.GetCultureInfo(lang);
-
-            if (filterContext.RouteData.Values.ContainsKey("ValorRANDOM") == false)
-                filterContext.RouteData.Values.Add("ValorRANDOM", Guid.NewGuid().ToString());
-            base.OnActionExecuting(filterContext);
         }
     }
 }

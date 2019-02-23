@@ -131,6 +131,9 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastrucutre\CustomModule.cs" />
+    <Compile Include="LeaoHandler.ashx.cs">
+      <DependentUpon>LeaoHandler.ashx</DependentUpon>
+    </Compile>
     <Compile Include="SomeHandler.ashx.cs">
       <DependentUpon>SomeHandler.ashx</DependentUpon>
     </Compile>
@@ -145,9 +148,11 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="google-chrome.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="SomeHandler.ashx" />
+    <Content Include="LeaoHandler.ashx" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

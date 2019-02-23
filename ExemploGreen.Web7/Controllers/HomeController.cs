@@ -37,7 +37,7 @@ namespace ExemploGreen.Web.Controllers
             return View();
         }
 
-        [FiltroDoLucas]
+        [LanguageFilterAttribute]
         public string RotaLucas()
         {
             if (RouteData.Values.ContainsKey("ValorRANDOM"))

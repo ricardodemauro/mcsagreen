@@ -28,5 +28,10 @@ namespace WebFotosAutenticado.Controllers
 
             return View();
         }
+
+        public ActionResult BatePapo()
+        {
+            return View();
+        }
     }
 }

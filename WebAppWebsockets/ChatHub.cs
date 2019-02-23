@@ -13,5 +13,10 @@ namespace WebAppWebsockets
             // Call the addNewMessageToPage method to update clients.
             Clients.All.addNewMessageToPage(name, message);
         }
+
+        public void BroadcastHelloWorld(string blabla)
+        {
+            Clients.All.addNewMessageToPage("Broadcaster", blabla);
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace WebAppHandlers.Infrastrucutre
         {
         }
 
-        public String ModuleName
+        public string ModuleName
         {
             get { return "CustomModule"; }
         }
@@ -47,7 +47,7 @@ namespace WebAppHandlers.Infrastrucutre
             var application = sender as HttpApplication;
             if (application != null)
             {
-                var ctx = application.Context;
+                HttpContext ctx = application.Context;
                 if (ctx.Request.RawUrl.EndsWith("/"))
                 {
                     application.Context.Response.Write("<h1>Hello from module</h1>");
