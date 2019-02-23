@@ -186,7 +186,7 @@
     <Compile Include="Infraestrutura\DataAnnotations\SobrenomeValidator.cs" />
     <Compile Include="Infraestrutura\Filters\AppErrorFilterAttribute.cs" />
     <Compile Include="Infraestrutura\Filters\AuditFilterAttribute.cs" />
-    <Compile Include="Infraestrutura\Filters\FiltroDoLucas.cs" />
+    <Compile Include="Infraestrutura\Filters\LanguageFilterAttribute.cs" />
     <Compile Include="Infraestrutura\Filters\GreenLoggerAttribute.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\HtmlHelperExtensions.cs" />
     <Compile Include="Infraestrutura\HtmlHelpers\LabelHtmlHelper.cs" />
