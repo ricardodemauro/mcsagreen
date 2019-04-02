@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style></style>
+</head>
+<body>
+    <div>
+        <p>Posição Carrinho:</p>
+        <p id="textoCarro"></p>
+
+        <button id="btnAndar">Andar</button>
+        <button id="btnCarregar">Carregar</button>
+
+        <button id="btnCarregar2">Carregar 2</button>
+    </div>
+
+    <script>
+        var carro = function (portas) {
+            this._portas = portas;
+            this._posicao = 0;
+
+            this.andar = function () {
+                this._posicao += 1;
+            }
+        };
+
+        class CarroV2 {
+            constructor(portas) {
+                this.portas = portas;
+                this.posicao = 0;
+            }
+
+            andar() {
+                this.posicao += 1;
+                return this.posicao;
+            }
+        }
+
+        class CarroEletrico extends CarroV2 {
+            constructor(portas, voltagem) {
+                super(portas);
+
+                this.voltagem = voltagem;
+                this.carga = 0;
+            }
+
+            andar() {
+                this.posicao += 2;
+                return this.posicao;
+            }
+
+            carregar() {
+                this.carga += this.voltagem;
+
+                console.log('carregou um pouquinho --> ' + this.carga);
+            }
+        }
+    </script>
+
+    <script>
+
+        const carrinho = new CarroEletrico(6, 110);
+
+        carrinho.carregar();
+
+        const posicao = carrinho.andar();
+
+        textoCarro.innerText = "Pos: " + posicao;
+
+        document.getElementById('btnCarregar')
+            .addEventListener('click', carrinho.carregar.bind(carrinho));
+
+        document.getElementById('btnCarregar2')
+            .addEventListener('click', () => carrinho.carregar());
+    </script>
+</body>
+</html>

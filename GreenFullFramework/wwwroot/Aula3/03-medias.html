@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>03-medias</title>
+
+    <style>
+        .me {
+            height: 120px;
+            width: 120px;
+            background-color: brown; /*marrom*/
+        }
+
+        h1 {
+            font-size: 40px;
+        }
+
+        @media (min-width: 576px) {
+           
+            .me {
+                background-color: #FFF; /*branco*/
+            }
+        }
+
+        /* Medium devices (tablets, 768px and up)*/
+        @media (min-width: 768px) {
+            .me {
+                background-color: #F00; /*vermelho*/
+            }
+        }
+
+        /* Large devices (desktops, 992px and up)*/
+        @media (min-width: 992px) {
+            .me {
+                background-color: #0F0; /*verde*/
+            }
+        }
+
+        /* Extra large devices (large desktops, 1200px and up)*/
+        @media (min-width: 1200px) {
+            h1 {
+                font-size: 8px;
+            }
+            .me {
+                background-color: #00F; /*azul*/
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Hello do H1</h1>
+    <div class="me">
+        <h1>Hello it's me Mario!</h1>
+    </div>
+</body>
+</html>

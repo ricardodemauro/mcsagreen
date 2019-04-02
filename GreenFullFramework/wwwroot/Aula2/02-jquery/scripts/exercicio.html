@@ -5,6 +5,27 @@
     <title></title>
 </head>
 <body>
+    <section name="cores"></section>
 
+    <script src="jquery-3.3.1.js"></script>
+    <script>
+        function inicio() {
+            $('[name="cores"]')
+                .append('<select name="selectCores" />');
+
+            $('[name="selectCores"]')
+                .append('<option value="vermelho">Vermelho</option>')
+                .append('<option value="verde">Verde</option>')
+                .append('<option value="azul">Azul</option>')
+                .css('width', '200px')
+                .addClass('class-sample');
+
+            // vermelho
+            // verde
+            // azul
+        }
+
+        inicio();
+    </script>
 </body>
 </html>

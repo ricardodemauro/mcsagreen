@@ -1,0 +1,23 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>10-ajax2</title>
+</head>
+<body>
+    <script>
+        fetch('http://www.mocky.io/v2/5c62e8323000006000019b09', { method: 'GET' })
+            .then(response => response.json())
+            .then(json => console.log(json))
+            .catch(error => console.error('algo deu errado em narnia', error));
+
+
+        //fetch("http://contoso.com/resources/...", {
+        //    method: "POST",
+        //    headers: {
+        //        "Content-Type": "application/json"
+        //    },
+        //    body: JSON.stringify({ name: "James" })
+        //});
+    </script>
+</body>
+</html>

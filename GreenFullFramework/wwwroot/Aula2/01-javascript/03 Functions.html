@@ -12,23 +12,24 @@
     </header>
 
     <article>
+        <section>
+            <div>
+                <label>Num 1:</label>
+                <input type="text" id="num1" />
+            </div>
 
-        <div>
-            <label>Num 1:</label>
-            <input type="text" id="num1" />
-        </div>
+            <div>
+                <label>Num 2:</label>
+                <input type="text" id="num2" />
+            </div>
 
-        <div>
-            <label>Num 2:</label>
-            <input type="text" id="num2" />
-        </div>
+            <div>
+                <button onclick="somar()">Somar</button>
+                <button id="subtrair">Subtrair</button>
+            </div>
 
-        <div>
-            <button onclick="somar()">Somar</button>
-            <button id="subtrair">Subtrair</button>
-        </div>
-
-        <div id="output"></div>
+            <div id="output"></div>
+        </section>
 
 
     </article>
@@ -66,6 +67,8 @@
             //console.log(result);
             output.textContent = result;
         }
+
+        const fnSum = (a, b) => { return a + b };
     </script>
 
 
