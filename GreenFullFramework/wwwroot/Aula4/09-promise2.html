@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>09-promise2</title>
+</head>
+<body>
+    <script>
+        //arrow function
+        let fnSomar = (d1, d2) => {
+            return Number(d1) + Number(d2);
+        };
+
+        //arrow function
+        let fnDobrar = d1 => Number(d1) * 2;
+
+        //arrow function que retonar uma promise
+        let somePromise = data => new Promise((resolve, reject) => {
+            // se nao for numerico
+            if (isNaN(data)) {
+                reject(Error('nao eh numerico'))
+            }
+            else {
+                resolve(Number(data) * 2);
+            }
+        });
+
+
+        //com erro
+        Promise.all([somePromise(12), somePromise('abc'), somePromise(32)])
+            .then(results => console.log('1-all arrived!', results))
+            .catch(error => console.log('1-deu erro.', error));
+
+        //com sucesso
+        Promise.all([somePromise(12), somePromise(1), somePromise(32)])
+            .then(results => console.log('2-all arrived!', results))
+            .catch(error => console.log('2-deu erro.', error));
+
+        //com erro
+        Promise.all([somePromise(12), somePromise('abc'), somePromise(32)])
+            .then(results => console.log('1-all arrived!', results));
+
+        console.log('ultima linha');
+    </script>
+</body>
+</html>

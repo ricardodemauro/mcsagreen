@@ -14,6 +14,14 @@
 
         console.log('regex numbers ' + rOnlyNumber.test(varNumber))
         console.log('regex numbers ' + regexOnlyNumber.test(varNotNumbers))
+
+
+        const rEmail = new RegExp('^[a-z]{3}@[a-z]{3}$');
+        const email = "abc@abc";
+        const email2 = "2abc@";
+
+        console.log(rEmail.test(email));
+        console.log(rEmail.test(email2));
     </script>
 </body>
 </html>

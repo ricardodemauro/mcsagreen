@@ -1,0 +1,52 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>01-Workers</title>
+    <script>
+        class WorkerSample {
+            constructor() {
+                this.worker = null;
+            }
+
+            iniciarWorker() {
+                if (typeof (Worker) !== "undefined") { //valida se o browser possui suporte
+                    if (this.worker === null) {
+                        this.worker = new Worker("02-Worker.js");
+                    }
+                    this.worker.onmessage = evt => {
+                        document.getElementById("result").innerHTML = evt.data;
+                    };
+                    this.worker.onerror = e => {
+                        document.getElementById('result').innerHTML = e.message;
+                    }
+                } else {
+                    document.getElementById("result").innerHTML = "Sorry! No Web Worker support.";
+                }
+            }
+
+            pararWorker() {
+                this.worker.terminate();
+                this.worker = null;
+            }
+
+            iniciar() {
+                document.getElementById('buttonStart').addEventListener('click', this.iniciarWorker.bind(this));
+
+                document.getElementById('buttonStop').addEventListener('click', this.pararWorker.bind(this));
+            }
+        }
+
+        const app = new WorkerSample();
+
+        window.onload = () => { app.iniciar(); }
+
+    </script>
+</head>
+<body>
+    <p>Count numbers: <output id="result"></output></p>
+
+    <button id="buttonStart">Start Worker</button>
+
+    <button id="buttonStop">Stop Worker</button>
+</body>
+</html>

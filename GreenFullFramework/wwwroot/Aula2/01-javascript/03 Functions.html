@@ -12,37 +12,41 @@
     </header>
 
     <article>
+        <section>
+            <div>
+                <label>Num 1:</label>
+                <input type="text" id="num1" />
+            </div>
 
-        <div>
-            <label>Num 1:</label>
-            <input type="text" id="num1" />
-        </div>
+            <div>
+                <label>Num 2:</label>
+                <input type="text" id="num2" />
+            </div>
 
-        <div>
-            <label>Num 2:</label>
-            <input type="text" id="num2" />
-        </div>
+            <div>
+                <button onclick="somar()">Somar</button>
+                <button id="subtrair">Subtrair</button>
+            </div>
 
-        <div>
-            <button onclick="somar()">Somar</button>
-            <button id="subtrair">Subtrair</button>
-        </div>
-
-        <div id="output"></div>
+            <div id="output"></div>
+        </section>
 
 
     </article>
 
     <script>
+
         document.getElementById("subtrair").addEventListener("click", subtrair);
         //document.getElementById("subtrair").removeEventListener("click");
         //document.getElementById("subtrair").onclick = somar;
+
         function somar() {
             //var val1 = num1.value;
             var val1 = document.getElementById('num1').value;
 
             if (isNaN(val1))
                 console.log('Valor do num1 incorreto');
+
 
             var val2 = document.getElementById('num2').value;
             if (isNaN(val2))
@@ -63,6 +67,8 @@
             //console.log(result);
             output.textContent = result;
         }
+
+        const fnSum = (a, b) => { return a + b };
     </script>
 
 

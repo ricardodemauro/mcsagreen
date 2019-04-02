@@ -9,51 +9,50 @@
     <p>Veja no console do browser</p>
 
     <script>
-        //alert('teste');
+        alert('teste');
         /*
         alert('teste');
         alert('teste');
         alert('teste');
         */
 
-        var letra = 'a';
-        letra2 = 'b';
+        let letra = 'a';
+        const letra2 = 'b';
 
         letra = "teste";
 
-        console.log(letra);
-        console.log(letra2);
+        //console.log(letra);
+        //console.log(letra2);
 
-        console.log(typeof letra);
+        //console.log(typeof letra);
 
-        letra = 123;
-        console.log(typeof letra);
+        //letra = 123;
+        //console.log(typeof letra);
 
-        letra = false;
-        console.log(typeof letra);
+        //letra = false;
+        //console.log(typeof letra);
 
-        
         //number
-        var num1 = '1';
-        var num2 = 2;
+        const num1 = '1';
+        const num2 = 2;
         console.log(num1 + num2);
 
         //undefined
-        var tipoIndefinido;
+        let tipoIndefinido;
         console.log(typeof tipoIndefinido);
 
-        tipoIndefinido = null;
-        console.log(typeof tipoIndefinido);
+        let tipoIndefinido2 = null;
+        console.log(typeof tipoIndefinido2);
 
         //boleano
-        var flag = true;
+        const flag = true;
         if (flag) {
             console.log('flag = true');
         } else {
             console.log('flag = false');
         }
 
-        function testeFlag(x) {
+        function testeFlag(x = 0, y, z, w) {
             if (x) {
                 console.log('flag = true');
             } else {
@@ -63,7 +62,7 @@
 
         testeFlag(false);
 
-        var testeflag = function (x) { }
+        const testeflag = function (x) { }
 
     </script>
 </body>
