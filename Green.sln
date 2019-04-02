@@ -5,15 +5,7 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 01 02 03 04", "Aula 01 02 03 04", "{91E7B42A-C4BD-4733-A0F9-08729850173A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 04", "Aula 04", "{D8158B43-1340-4970-8777-DE56F63A95F3}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreenFullFramework", "GreenFullFramework\GreenFullFramework.csproj", "{1A17F90E-9372-4A31-9D0F-7C79D0D6B806}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 06", "Aula 06", "{11D26B4C-9326-4683-9073-33B748793C4B}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 05", "Aula 05", "{E813DC54-D1F5-48E4-A9A4-E86EA4E6AF8F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 07", "Aula 07", "{6949BBBC-766E-4082-8ABA-C381D721BD97}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4D80A60F-51CA-49CA-9EA5-6EA94BAB9346}"
 EndProject
@@ -22,12 +14,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Misc", "Misc", "{1FE30A21-2
 		jogadores.csv = jogadores.csv
 		Readme.txt = Readme.txt
 	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 08", "Aula 08", "{F9A797F0-509D-4EBC-B22C-971F726A8CE0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 09", "Aula 09", "{780D1842-06ED-428F-AE0B-0409AB62AD71}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula 10", "Aula 10", "{6655DBF4-8132-408F-B688-FE1A936FA615}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
