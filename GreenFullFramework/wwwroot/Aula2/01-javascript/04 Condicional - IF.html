@@ -36,31 +36,38 @@
         //var xpto = 'testando escopo global';
 
         function conditional() {
-            var n1 = "1";
-            var s1 = 1;
+            var n1 = "2";
+            var s1 = 2;
 
             var b1 = false;
             var b2 = 0;
             var b3 = [];
             var b4 = {};
 
-            document.writeln(b1 == b2)
-            document.writeln(b1 == b3)
+            document.writeln(b1 === b2)
+            document.writeln('<br />')
+            document.writeln(b1 === b3)
+            document.writeln('<br />')
             document.writeln(b1 == b4)
+            document.writeln('<br />')
             document.writeln(b2 == b4)
+            document.writeln('<br />')
 
             if (n1 == s1) {
                 document.writeln('content n1 == s1 ' + (n1 == s1))
+                document.writeln('<br />')
             }
 
             if (n1 === s1) {
                 document.writeln('content n1 === s1 ' + (n1 === s1))
+                document.writeln('<br />')
             }
 
             var type1 = typeof n1;
             var type2 = typeof s1;
 
             document.writeln('type1 ' + (type1))
+            document.writeln('<br />')
             document.writeln('type2 ' + (type2))
         }
 

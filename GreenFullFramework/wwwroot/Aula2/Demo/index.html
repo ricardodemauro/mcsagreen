@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Demo Javascript</title>
+    <script>
+        console.log("Hello world");
+    </script>
+
+    <script>
+        const lado = 120;
+        let corDeFundo = "yellow";
+
+        const maximo = 1000;
+
+        const areaQuadrado = lado * lado;
+
+        if (areaQuadrado > maximo) {
+            corDeFundo = "red";
+        }
+        console.log("Saida do console 3 " + corDeFundo);
+    </script>
+
+    <script>
+        function calcularAreaDoQuadrado(lado) {
+            return lado * lado;
+        }
+
+        function Calcular() {
+            const lQuadrado = Number(ladoQuadrado.value);
+
+            const aQuadrado = calcularAreaDoQuadrado(lQuadrado);
+
+            let corDoQuadrado = 'black';
+            //if (aQuadrado > 1000) {
+            //    corDoQuadrado = 'red';
+            //}
+            //else {
+            //    corDoQuadrado = 'yellow';
+            //}
+
+
+            // se igual 100 red
+            // se igual 200 blue
+            // default yellow
+            switch (aQuadrado) {
+                case 100:
+                    corDoQuadrado = '#FFF000';
+                    break;
+                case 200:
+                    corDoQuadrado = 'blue';
+                    break;
+                default:
+                    corDoQuadrado = 'yellow';
+            }
+
+            saidaQuadrado.style.backgroundColor = corDoQuadrado;
+        }
+
+        //window.onload += function () {
+        //    document.getElementById('calcularQuadrado')
+        //        .addEventListener('click', executar);
+        //}
+    </script>
+</head>
+<body>
+    <h1>Cálculo do Quadrado</h1>
+    <article>
+        <label>Lado do Quadrado</label>
+        <input type="number" id="ladoQuadrado" />
+
+        <hr />
+
+        <button type="button" id="calcularQuadrado" onclick="Calcular()">Calcular</button>
+        <div id="saidaQuadrado" style="width:45px; height: 45px; display:block">
+        </div>
+    </article>
+</body>
+</html>
