@@ -5,7 +5,11 @@
     <style>
         @font-face {
             font-family: indieFlower;
-            src: ('IndieFlower.ttf')
+            src: url('IndieFlower.ttf');
+        }
+
+        #helloworldId {
+            font: 8px indieFlower, Arial, Tahoma, Sans-serif;
         }
 
         p.newfont {
@@ -34,10 +38,18 @@
 <body>
     <p>Hello world</p>
 
+    <p id="helloworldId">Hello world from Id</p>
+
     <p class="newfont">Hello world</p>
 
     <p class="newfont absoluteSize">Hello world</p>
 
     <p class="newfont relativeSize">Hello world</p>
+
+    <ul class="novo">
+        <li>primerio</li>
+        <li>segundo</li>
+        <li>terceiro</li>
+    </ul>
 </body>
 </html>

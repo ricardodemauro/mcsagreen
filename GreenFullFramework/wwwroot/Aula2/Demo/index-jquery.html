@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Lista de Compras</title>
+
+    <script src="../01-javascript/jquery-3.3.1.min.js"></script>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body>
+    <section>
+        <div class="container">
+            <h1>Lista de Compras</h1>
+
+            <ol>
+                <li>Cebola</li>
+                <li>Tomate</li>
+                <li>Abacate</li>
+            </ol>
+
+            <form role="form" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="compra">Item de compra:</label>
+                    <input type="text" id="compra" class="form-control" placeholder="item da compra" />
+                </div>
+                <button id="btncompra" onclick="adicionarItem()" class="btn btn-primary">Comprar!</button>
+            </form>
+        </div>
+    </section>
+    <script>
+        function adicionarItem() {
+            const digitado = $("#compra").val();
+            console.log(digitado);
+
+
+            //entrar no loop somente se atender a regex abaixo
+            //      ^[A-Z][\w\d]+a$
+            const rTester = /^[A-Z][\w\d]+a$/;
+            //const rTester2 = new RegExp("/^[A-Z][\w\d]+a$/");
+
+            console.log('test 1 ' + rTester.test(digitado));
+            //console.log('test 2 ' + rTester2.test(digitado));
+
+            if (rTester.test(digitado)) {
+
+                //escrever tres vezes o "digitado"
+                for (var i = 0; i < 3; i++) {
+                    $('ol').append('<li>' + digitado + '</li>')
+                    //.prepend('<li>' + digitado + '</li>');
+                }
+
+                $('#compra').val('');
+            }
+        }
+    </script>
+</body>
+</html>

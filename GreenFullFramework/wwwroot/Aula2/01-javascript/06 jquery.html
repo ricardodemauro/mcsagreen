@@ -11,15 +11,15 @@
     <script>
         //document.getElementsByTagName('h1')[0].textContent = 'Testando';
 
-        //$('h1') //somente o elemento
-        //$('#tituloPrincipal').text('Testando c/ jQuery'); //elemento por id
+        $('h1')[0].textContent = "testando 2"; //somente o elemento
+        $('#tituloSecundario').append('<div>ola mundo</div>') //por id
+        $(".hello-word").css('background-color', 'red'); //por class
 
-        //$('#tituloSecundario').append('<div>ola mundo</div>')
+        $("[data-ricardo='ola']").css("margin-top", '60px'); //por atributo
+
         //$("<div>ola mundo</div>").appendTo('#tituloSecundario')
-
-        $(".hello-word").css('background-color', 'red');
         //$('[data-ricardo="ola"]').css('margin-top', '60px');
-        $("[data-ricardo='ola']").css("margin-top", '60px');
+        //$('#tituloPrincipal').text('Testando c/ jQuery'); //elemento por id
     </script>
 </body>
 </html>

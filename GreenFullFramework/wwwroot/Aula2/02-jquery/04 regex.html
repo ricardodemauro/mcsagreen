@@ -6,22 +6,23 @@
 </head>
 <body>
     <script type="text/javascript">
-        var rOnlyNumber = /\d+/;
-        var regexOnlyNumber = new RegExp('\d+');
-
         var varNumber = "03523523532";
         var varNotNumbers = "abc232323cdd";
 
-        console.log('regex numbers ' + rOnlyNumber.test(varNumber))
+
+        var regexOnlyNumber = new RegExp('$\d+^');
         console.log('regex numbers ' + regexOnlyNumber.test(varNotNumbers))
 
+        var rOnlyNumber = /\d+/;
+        console.log('regex numbers ' + rOnlyNumber.test(varNumber))
 
-        const rEmail = new RegExp('^[a-z]{3}@[a-z]{3}$');
-        const email = "abc@abc";
-        const email2 = "2abc@";
 
-        console.log(rEmail.test(email));
-        console.log(rEmail.test(email2));
+        //const rEmail = new RegExp('^[a-z]{3}@[a-z]{3}$');
+        //const email = "abc@abc";
+        //const email2 = "2abc@";
+
+        //console.log(rEmail.test(email));
+        //console.log(rEmail.test(email2));
     </script>
 </body>
 </html>
