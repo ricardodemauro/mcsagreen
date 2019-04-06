@@ -14,10 +14,24 @@ namespace WebTodos.Data
         public InMemoryTodoDatabase()
         {
             _db = new List<Todo>();
+            _db.Add(new Todo()
+            {
+                Descricao = "Primeiro todo",
+                Done = false,
+                Id = Guid.NewGuid()
+            });
+
+            _db.Add(new Todo()
+            {
+                Descricao = "Segundo todo",
+                Done = false,
+                Id = Guid.NewGuid()
+            });
         }
 
         public void AddTodo(Todo todo)
         {
+            todo.Id = Guid.NewGuid();
             _db.Add(todo);
         }
 

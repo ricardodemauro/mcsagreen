@@ -13,5 +13,7 @@ namespace WebTodos.Models
         public string Descricao { get; set; }
 
         public bool Done { get; set; }
+
+        public string Categoria { get; set; }
     }
 }
