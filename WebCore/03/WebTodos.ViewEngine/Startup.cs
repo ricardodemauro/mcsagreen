@@ -9,6 +9,9 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Options;
+using WebTodos.ViewEngine.Infra;
+using WebTodos.ViewEngine.Infra.ViewEngines;
 
 namespace WebTodos.ViewEngine
 {
@@ -31,8 +34,26 @@ namespace WebTodos.ViewEngine
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddOptions();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+            services.Configure<PugzorViewEngineOptions>(cfg =>
+            {
+                cfg.Pretty = false;
+                cfg.ViewLocationFormats.Add("ViewsPug/{1}/{0}");
+                cfg.ViewLocationFormats.Add("ViewsPug/Shared/{0}");
+            });
+
+            services.AddSingleton<PugRendering>()
+                .AddSingleton<PugzorViewEngine>();
+
+            services.AddNodeServices(opts =>
+            {
+                opts.ProjectPath = "wwwroot/view-engine";
+            });
+
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
+                .Services.AddTransient<IConfigureOptions<MvcViewOptions>, PugzorMvcViewOptionsSetup>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
