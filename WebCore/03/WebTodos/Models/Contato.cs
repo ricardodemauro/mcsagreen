@@ -7,14 +7,16 @@ using WebTodos.Infra;
 
 namespace WebTodos.Models
 {
-    public class Todo : IDbEntity
+    public class Contato : IDbEntity
     {
         public Guid Id { get; set; }
 
-        public string Descricao { get; set; }
+        public string Nome { get; set; }
 
-        public bool Done { get; set; }
+        public string Telefone { get; set; }
 
-        public string Categoria { get; set; }
+        public long? Latitude { get; set; }
+
+        public long? Longitude { get; set; }
     }
 }

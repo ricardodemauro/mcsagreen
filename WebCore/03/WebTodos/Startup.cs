@@ -25,7 +25,7 @@ namespace WebTodos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddSingleton<ITodoDatabase, InMemoryTodoDatabase>();
+            services.AddSingleton(typeof(IDatabase<>), typeof(InMemoryDatabase<>));
 
 
             services.Configure<CookiePolicyOptions>(options =>

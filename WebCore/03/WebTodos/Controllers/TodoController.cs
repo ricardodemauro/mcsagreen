@@ -12,9 +12,9 @@ namespace WebTodos.Controllers
 {
     public class TodoController : Controller
     {
-        private ITodoDatabase database;
+        private IDatabase<Todo> database;
 
-        public TodoController(ITodoDatabase database)
+        public TodoController(IDatabase<Todo> database)
         {
             this.database = database;
         }
@@ -37,7 +37,7 @@ namespace WebTodos.Controllers
         [HttpPost]
         public IActionResult Edit(string id, Todo item)
         {
-            database.UpdateTodo(id, item);
+            database.Update(id, item);
             return RedirectToAction("Index");
         }
 
@@ -50,7 +50,7 @@ namespace WebTodos.Controllers
         [HttpPost]
         public IActionResult Create(Todo item)
         {
-            database.AddTodo(item);
+            database.Add(item);
             return RedirectToAction("Index");
         }
 
