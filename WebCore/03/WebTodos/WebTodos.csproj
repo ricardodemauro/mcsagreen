@@ -14,7 +14,7 @@
 
 
   <ItemGroup>
-    <Folder Include="Infra\ViewComponents\" />
+    <Folder Include="Infra\TagHelpers\" />
   </ItemGroup>
 
 </Project>

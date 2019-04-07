@@ -36,6 +36,13 @@
         </dd>
     </dl>
 </div>
+<div class="row">
+
+    @await Component.InvokeAsync("DisplayMap", new { latitude = Model.Latitude, longitude = Model.Longitude })
+
+    <hr />
+    <vc:display-map latitude="@Model.Latitude" longitude="@Model.Longitude" />
+</div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
     <a asp-action="Index">Back to List</a>

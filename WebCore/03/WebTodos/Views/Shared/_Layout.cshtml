@@ -52,11 +52,7 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - WebTodos - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+    @await Html.PartialAsync("_Footer")
 
     <environment include="Development">
         <script src="~/lib/jquery/dist/jquery.js"></script>

@@ -15,8 +15,8 @@ namespace WebTodos.Models
 
         public string Telefone { get; set; }
 
-        public long? Latitude { get; set; }
+        public decimal? Latitude { get; set; }
 
-        public long? Longitude { get; set; }
+        public decimal? Longitude { get; set; }
     }
 }
