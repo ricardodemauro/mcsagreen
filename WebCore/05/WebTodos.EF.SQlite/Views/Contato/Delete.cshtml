@@ -1,0 +1,14 @@
+﻿@model Contato
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Confirma apagar o registro @Model.Nome (@Model.Id)</h3>
+
+<form asp-action="Delete">
+    <input type="submit" value="Delete" class="btn btn-danger" /> |
+    <a asp-action="Index">Back to List</a>
+</form>
