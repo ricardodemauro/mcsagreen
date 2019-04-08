@@ -21,8 +21,8 @@
             <div class="form-group">
                 <label asp-for="Categoria" class="control-label"></label>
 
-                @Html.DropDownListFor(m => m.Categoria, (System.Collections.Generic.IEnumerable<SelectListItem>)ViewBag.CategoriaOptions, "Categorias", new { @class = "form-control" })
-
+                @*@Html.DropDownListFor(m => m.Categoria, (System.Collections.Generic.IEnumerable<SelectListItem>)ViewBag.CategoriaOptions, "Categorias", new { @class = "form-control" })*@
+                <select asp-for="Categoria" asp-items="@ViewBag.CategoriaOptions" class="form-control"></select>
                 <span asp-validation-for="Categoria" class="text-danger"></span>
             </div>
 
