@@ -24,13 +24,13 @@ namespace WebTodos.Controllers
         {
             ViewBag.ServerTime = DateTime.Now;
 
-            var todos = database.GetAll();
+            List<Todo> todos = database.GetAll();
             return View(todos);
         }
 
         public IActionResult Edit(string id)
         {
-            var todo = database.GetById(id);
+            Todo todo = database.GetById(id);
             return View(todo);
         }
 

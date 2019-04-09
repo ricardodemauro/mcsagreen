@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebTodos.Data;
+using WebTodos.Infra;
 
 namespace WebTodos
 {
@@ -26,7 +27,7 @@ namespace WebTodos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(typeof(IDatabase<>), typeof(InMemoryDatabase<>));
-
+            services.AddSingleton(typeof(GreenUserIdentity));
 
             services.Configure<CookiePolicyOptions>(options =>
             {

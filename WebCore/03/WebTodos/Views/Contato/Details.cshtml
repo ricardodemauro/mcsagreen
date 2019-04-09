@@ -41,6 +41,7 @@
     @await Component.InvokeAsync("DisplayMap", new { latitude = Model.Latitude, longitude = Model.Longitude })
 
     <hr />
+    <vc:display-map 
     <vc:display-map latitude="@Model.Latitude" longitude="@Model.Longitude" />
 </div>
 <div>

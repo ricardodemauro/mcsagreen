@@ -47,6 +47,7 @@ namespace WebTodos.Controllers
             return View();
         }
 
+        [ValidateModel]
         [HttpPost]
         public IActionResult Create(Todo item)
         {

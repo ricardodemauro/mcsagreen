@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using WebTodos.Infra;
+using WebTodos.Infra.Filters;
 using WebTodos.Models;
 
 namespace WebTodos.Controllers
@@ -12,13 +13,15 @@ namespace WebTodos.Controllers
     public class HomeController : Controller
     {
         [AddHeaderFactory]
+        [GreenHeaderResultFilterAttribute]
         public IActionResult Index()
         {
             return View();
         }
 
-        //[ShortCircuitingResourceFilter]
+        [ShortCircuitingResourceFilter]
         [AddHeaderResultFilter("Bla", "Hahahaha")]
+        [GreenHeaderResultFilterAttribute]
         public IActionResult Privacy()
         {
             return View();

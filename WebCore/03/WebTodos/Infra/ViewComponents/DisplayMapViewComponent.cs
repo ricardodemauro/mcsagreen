@@ -16,11 +16,14 @@ namespace WebTodos.Infra.ViewComponents
             if (longitude.HasValue && latitude.HasValue)
             {
                 Location location = new Location(longitude.Value, latitude.Value);
+
+
+
                 return View(location);
             }
             else
             {
-                return Content(string.Empty);
+                return Content("<h1>Nao veio nada</h1>");
             }
         }
     }

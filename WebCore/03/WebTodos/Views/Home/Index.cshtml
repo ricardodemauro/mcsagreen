@@ -2,6 +2,17 @@
     ViewData["Title"] = "Home Page";
 }
 
+@inject WebTodos.Infra.GreenUserIdentity identity
+
+@if (identity.IsAuthenticated())
+{
+    <h1>Autenticado</h1>
+}
+else
+{
+    <h1>Não Autenticado</h1>
+}
+
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>

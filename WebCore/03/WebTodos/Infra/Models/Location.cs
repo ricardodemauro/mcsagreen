@@ -12,6 +12,8 @@ namespace WebTodos.Infra.Models
 
         public decimal Latitude { get; private set; }
 
+        public string UrlMaps { get; set; }
+
         public Location(decimal longitude, decimal latitude)
         {
             Longitude = longitude;

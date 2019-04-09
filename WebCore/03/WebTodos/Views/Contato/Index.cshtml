@@ -4,6 +4,8 @@
     ViewData["Title"] = "Index";
 }
 
+<h1>@ViewBag.Title</h1>
+
 <h1>Index</h1>
 
 <p>
@@ -19,10 +21,7 @@
                 @Html.DisplayNameFor(model => model.Telefone)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Latitude)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Longitude)
+                Localização
             </th>
             <th></th>
         </tr>
@@ -38,10 +37,7 @@
                     @Html.DisplayFor(modelItem => item.Telefone)
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Latitude)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Longitude)
+                    <vc:bing-maps latitude="@item.Latitude" longitude="@item.Longitude" />
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
