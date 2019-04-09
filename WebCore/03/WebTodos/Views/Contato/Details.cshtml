@@ -41,8 +41,8 @@
     @await Component.InvokeAsync("DisplayMap", new { latitude = Model.Latitude, longitude = Model.Longitude })
 
     <hr />
-    <vc:display-map 
-    <vc:display-map latitude="@Model.Latitude" longitude="@Model.Longitude" />
+    <vc:bing-maps latitude="@Model.Latitude" longitude="@Model.Longitude" />
+    @*<vc:display-map latitude="@Model.Latitude" longitude="@Model.Longitude" />*@
 </div>
 <div>
     @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
