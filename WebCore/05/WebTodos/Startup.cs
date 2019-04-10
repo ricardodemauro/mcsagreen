@@ -26,7 +26,7 @@ namespace WebTodos
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton(typeof(IDatabase<>), typeof(InMemoryDatabase<>));
-
+            services.AddDbContext<WebTodosDbContext>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {

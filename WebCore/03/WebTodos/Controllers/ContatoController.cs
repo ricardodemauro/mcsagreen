@@ -31,6 +31,7 @@ namespace WebTodos.Controllers
         }
 
         // GET: Contato/Create
+        [HttpGet]
         public ActionResult Create()
         {
             return View();
@@ -39,7 +40,7 @@ namespace WebTodos.Controllers
         // POST: Contato/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(Contato formData)
+        public ActionResult Create([Bind("Nome, Telefone")] Contato formData)
         {
             if (ModelState.IsValid)
             {
@@ -59,7 +60,7 @@ namespace WebTodos.Controllers
         // POST: Contato/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(string id, Contato formData)
+        public ActionResult Edit([FromRoute] string id, [FromForm] Contato formData)
         {
             if (ModelState.IsValid)
             {
@@ -71,7 +72,8 @@ namespace WebTodos.Controllers
         }
 
         // GET: Contato/Delete/5
-        public ActionResult Delete(string id)
+        [HttpGet]
+        public IActionResult Delete(string id)
         {
             return View(_db.GetById(id));
         }
@@ -79,7 +81,7 @@ namespace WebTodos.Controllers
         // POST: Contato/Delete/5
         [HttpPost("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirm(string id)
+        public IActionResult DeleteConfirm(string id)
         {
             _db.Remove(id);
             return RedirectToAction(nameof(Index));

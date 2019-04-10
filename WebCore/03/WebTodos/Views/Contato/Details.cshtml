@@ -23,25 +23,25 @@
             @Html.DisplayFor(model => model.Telefone)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Latitude)
+            @Html.DisplayNameFor(model => model.Location.Latitude)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Latitude)
+            @Html.DisplayFor(model => model.Location.Latitude)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Longitude)
+            @Html.DisplayNameFor(model => model.Location.Longitude)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Longitude)
+            @Html.DisplayFor(model => model.Location.Longitude)
         </dd>
     </dl>
 </div>
 <div class="row">
 
-    @await Component.InvokeAsync("DisplayMap", new { latitude = Model.Latitude, longitude = Model.Longitude })
+    @await Component.InvokeAsync("DisplayMap", new { latitude = Model.Location.Latitude, longitude = Model.Location.Longitude })
 
     <hr />
-    <vc:bing-maps latitude="@Model.Latitude" longitude="@Model.Longitude" />
+    <vc:bing-maps latitude="@Model.Location.Latitude" longitude="@Model.Location.Longitude" />
     @*<vc:display-map latitude="@Model.Latitude" longitude="@Model.Longitude" />*@
 </div>
 <div>

@@ -8,16 +8,21 @@ namespace WebTodos.Infra.Models
 {
     public class Location : ILocationEntity
     {
-        public decimal Longitude { get; private set; }
+        public decimal Longitude { get; set; }
 
-        public decimal Latitude { get; private set; }
+        public decimal Latitude { get; set; }
 
         public string UrlMaps { get; set; }
 
-        public Location(decimal longitude, decimal latitude)
-        {
-            Longitude = longitude;
-            Latitude = latitude;
-        }
+        //public Location(decimal longitude, decimal latitude)
+        //{
+        //    Longitude = longitude;
+        //    Latitude = latitude;
+        //}
+
+        //public Location()
+        //{
+
+        //}
     }
 }

@@ -1,29 +1,19 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using WebTodos.EF.SQlite.Models;
+using WebTodos.Models;
 
-namespace WebTodos.EF.SQlite.Data
+namespace WebTodos.Data
 {
-    public class TodoDbContext : DbContext
+    public class WebTodosDbContext : DbContext
     {
-        public DbSet<Contato> Contatos { get; set; }
-
         public DbSet<Todo> Todos { get; set; }
-
-        public TodoDbContext()
-        {
-
-        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlite("Data Source=WebTodos.db");
-
+            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=WebTodos;Integrated Security=True;Pooling=False");
             base.OnConfiguring(optionsBuilder);
         }
     }

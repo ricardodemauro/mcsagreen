@@ -50,6 +50,14 @@ namespace WebTodos.Controllers
         [HttpPost]
         public IActionResult Create(Todo item)
         {
+            ModelState.AddModelError("Categoria", "Deu ruim aqui hein");
+
+
+            if (ModelState.IsValid == false)
+            {
+                BuildView();
+                return View(item);
+            }
             database.Add(item);
             return RedirectToAction("Index");
         }

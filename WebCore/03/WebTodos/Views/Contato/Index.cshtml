@@ -37,7 +37,7 @@
                     @Html.DisplayFor(modelItem => item.Telefone)
                 </td>
                 <td>
-                    <vc:bing-maps latitude="@item.Latitude" longitude="@item.Longitude" />
+                    <vc:bing-maps latitude="@item.Location.Latitude" longitude="@item.Location.Longitude" />
                 </td>
                 <td>
                     @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |

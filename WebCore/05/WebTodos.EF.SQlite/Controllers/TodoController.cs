@@ -12,31 +12,33 @@ namespace WebTodos.EF.SQlite.Controllers
 {
     public class TodoController : Controller
     {
-        private IDatabase<Todo> database;
+        //private IDatabase<Todo> database;
+        private readonly TodoDbContext _db;
 
-        public TodoController(IDatabase<Todo> database)
+        public TodoController(TodoDbContext db)
         {
-            this.database = database;
+            _db = db;
         }
 
         public IActionResult Index()
         {
             ViewBag.ServerTime = DateTime.Now;
 
-            var todos = database.GetAll();
+            var todos = _db.Todos.ToList();
             return View(todos);
         }
 
         public IActionResult Edit(string id)
         {
-            var todo = database.GetById(id);
+            var todo = _db.Todos.Find(id);
             return View(todo);
         }
 
         [HttpPost]
         public IActionResult Edit(string id, Todo item)
         {
-            database.Update(id, item);
+            _db.Todos.Update(item);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
@@ -49,7 +51,8 @@ namespace WebTodos.EF.SQlite.Controllers
         [HttpPost]
         public IActionResult Create(Todo item)
         {
-            database.Add(item);
+            _db.Todos.Add(item);
+            _db.SaveChanges();
             return RedirectToAction("Index");
         }
 
