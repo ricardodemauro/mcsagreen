@@ -15,6 +15,6 @@ namespace WebTodos.Models
 
         public bool Done { get; set; }
 
-        public string Categoria { get; set; }
+        public Categoria Categoria { get; set; }
     }
 }

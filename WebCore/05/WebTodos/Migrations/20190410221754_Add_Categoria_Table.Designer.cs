@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebTodos.Data;
 
 namespace WebTodos.Migrations
 {
     [DbContext(typeof(WebTodosDbContext))]
-    partial class WebTodosDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190410221754_Add_Categoria_Table")]
+    partial class Add_Categoria_Table
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -37,7 +39,7 @@ namespace WebTodos.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int?>("CategoriaId");
+                    b.Property<string>("Categoria");
 
                     b.Property<string>("Descricao");
 
@@ -45,16 +47,7 @@ namespace WebTodos.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CategoriaId");
-
                     b.ToTable("Todos");
-                });
-
-            modelBuilder.Entity("WebTodos.Models.Todo", b =>
-                {
-                    b.HasOne("WebTodos.Models.Categoria", "Categoria")
-                        .WithMany("Todos")
-                        .HasForeignKey("CategoriaId");
                 });
 #pragma warning restore 612, 618
         }

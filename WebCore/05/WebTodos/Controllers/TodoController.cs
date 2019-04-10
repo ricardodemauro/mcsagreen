@@ -12,15 +12,13 @@ namespace WebTodos.Controllers
 {
     public class TodoController : Controller
     {
-        private IDatabase<Todo> database;
-
-        public TodoController(IDatabase<Todo> database)
+        public TodoController()
         {
-            this.database = database;
+
         }
 
         [LogActionFilter]
-        public IActionResult Index()
+        public IActionResult Index([FromServices] IDatabase<Todo> database)
         {
             ViewBag.ServerTime = DateTime.Now;
 
@@ -28,14 +26,14 @@ namespace WebTodos.Controllers
             return View(todos);
         }
 
-        public IActionResult Edit(string id)
+        public IActionResult Edit(string id, [FromServices] IDatabase<Todo> database)
         {
             var todo = database.GetById(id);
             return View(todo);
         }
 
         [HttpPost]
-        public IActionResult Edit(string id, Todo item)
+        public IActionResult Edit(string id, Todo item, [FromServices] IDatabase<Todo> database)
         {
             database.Update(id, item);
             return RedirectToAction("Index");
@@ -48,7 +46,7 @@ namespace WebTodos.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Todo item)
+        public IActionResult Create(Todo item, [FromServices] IDatabase<Todo> database)
         {
             database.Add(item);
             return RedirectToAction("Index");
@@ -56,14 +54,17 @@ namespace WebTodos.Controllers
 
         private void BuildView()
         {
-            var options = new SelectListItem[]
+            using (WebTodosDbContext dbContext = new WebTodosDbContext())
             {
-                new SelectListItem("familia", "familia"),
-                new SelectListItem("trabalho", "trabalho"),
-                new SelectListItem("estudo", "estudo")
-            };
+                var categorias = dbContext.Categorias.ToList();
 
-            ViewBag.CategoriaOptions = options;
+                var options = new List<SelectListItem>();
+                foreach (var cat in categorias)
+                {
+                    options.Add(new SelectListItem(cat.Descricao, cat.Id.ToString()));
+                }
+                ViewBag.CategoriaOptions = options;
+            }
         }
     }
 }
