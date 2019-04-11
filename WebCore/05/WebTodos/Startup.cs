@@ -6,10 +6,16 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI;
+using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebTodos.Data;
+using WebTodos.Infra.Services;
+using WebTodos.Models;
 
 namespace WebTodos
 {
@@ -28,7 +34,30 @@ namespace WebTodos
             //services.AddSingleton(typeof(IDatabase<>), typeof(InMemoryDatabase<>));
             services.AddTransient<IDatabase<Models.Todo>, EFDatabase>();
 
-            services.AddDbContext<WebTodosDbContext>();
+            services.AddDbContext<WebTodosDbContext>(cfg =>
+            {
+                cfg.UseSqlServer(@"Data Source=GALACTUS;Initial Catalog=TODOS_IDENTITY;Integrated Security=True;Pooling=False");
+            });
+
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddEntityFrameworkStores<WebTodosDbContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 0;
+
+                options.SignIn.RequireConfirmedEmail = true;
+                options.SignIn.RequireConfirmedPhoneNumber = true;
+            });
+
+            services.AddTransient<IEmailSender, DumbEmailSender>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -36,7 +65,6 @@ namespace WebTodos
                 options.CheckConsentNeeded = context => true;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
-
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -58,6 +86,8 @@ namespace WebTodos
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseAuthentication();
 
             app.UseMvc(routes =>
             {

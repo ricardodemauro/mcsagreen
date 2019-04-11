@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using WebTodos.Data;
@@ -10,6 +11,7 @@ using WebTodos.Models;
 
 namespace WebTodos.Controllers
 {
+    [Authorize]
     public class TodoController : Controller
     {
         public TodoController()
@@ -39,9 +41,9 @@ namespace WebTodos.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult Create()
+        public IActionResult Create([FromServices] WebTodosDbContext dbContext)
         {
-            BuildView();
+            BuildView(dbContext);
             return View();
         }
 
@@ -52,19 +54,16 @@ namespace WebTodos.Controllers
             return RedirectToAction("Index");
         }
 
-        private void BuildView()
+        private void BuildView(WebTodosDbContext dbContext)
         {
-            using (WebTodosDbContext dbContext = new WebTodosDbContext())
-            {
-                var categorias = dbContext.Categorias.ToList();
+            var categorias = dbContext.Categorias.ToList();
 
-                var options = new List<SelectListItem>();
-                foreach (var cat in categorias)
-                {
-                    options.Add(new SelectListItem(cat.Descricao, cat.Id.ToString()));
-                }
-                ViewBag.CategoriaOptions = options;
+            var options = new List<SelectListItem>();
+            foreach (var cat in categorias)
+            {
+                options.Add(new SelectListItem(cat.Descricao, cat.Id.ToString()));
             }
+            ViewBag.CategoriaOptions = options;
         }
     }
 }
