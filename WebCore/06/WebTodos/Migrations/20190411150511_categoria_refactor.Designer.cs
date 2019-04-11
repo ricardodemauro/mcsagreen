@@ -10,8 +10,8 @@ using WebTodos.Data;
 namespace WebTodos.Migrations
 {
     [DbContext(typeof(WebTodosDbContext))]
-    [Migration("20190410234207_Initial")]
-    partial class Initial
+    [Migration("20190411150511_categoria_refactor")]
+    partial class categoria_refactor
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -168,8 +168,6 @@ namespace WebTodos.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<string>("Telefone");
-
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
@@ -201,10 +199,48 @@ namespace WebTodos.Migrations
                     b.ToTable("Categorias");
                 });
 
+            modelBuilder.Entity("WebTodos.Models.Contato", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Age");
+
+                    b.Property<int?>("LocationId");
+
+                    b.Property<string>("Nome")
+                        .IsRequired();
+
+                    b.Property<string>("Telefone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.ToTable("Contatos");
+                });
+
+            modelBuilder.Entity("WebTodos.Models.GeoLocation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Latitude");
+
+                    b.Property<decimal>("Longitude");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GeoLocation");
+                });
+
             modelBuilder.Entity("WebTodos.Models.Todo", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Categoria");
 
                     b.Property<int?>("CategoriaId");
 
@@ -264,9 +300,16 @@ namespace WebTodos.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
+            modelBuilder.Entity("WebTodos.Models.Contato", b =>
+                {
+                    b.HasOne("WebTodos.Models.GeoLocation", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId");
+                });
+
             modelBuilder.Entity("WebTodos.Models.Todo", b =>
                 {
-                    b.HasOne("WebTodos.Models.Categoria", "Categoria")
+                    b.HasOne("WebTodos.Models.Categoria")
                         .WithMany("Todos")
                         .HasForeignKey("CategoriaId");
                 });

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebTodos.Models;
 
-namespace WebTodos.Data
+namespace WebTodos.Data.Repositories
 {
-    public class EFDatabase : IDatabase<WebTodos.Models.Todo>
+    public class TodoRepository : IDatabase<Todo>
     {
         private readonly WebTodosDbContext _db;
 
-        public EFDatabase(WebTodosDbContext db)
+        public TodoRepository(WebTodosDbContext db)
         {
             _db = db;
         }

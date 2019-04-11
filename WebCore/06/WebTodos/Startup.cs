@@ -32,14 +32,32 @@ namespace WebTodos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddSingleton(typeof(IDatabase<>), typeof(InMemoryDatabase<>));
-            services.AddTransient<IDatabase<Todo>, TodoRepository>();
-            services.AddTransient<IDatabase<Contato>, ContatoRepository>();
+            services.AddScoped(typeof(IDatabase<,>), typeof(EFGenericRepository<,>));
 
             services.AddDbContext<WebTodosDbContext>(cfg =>
             {
-                cfg.UseSqlServer(@"Data Source=GALACTUS;Initial Catalog=TODOS_IDENTITY;Integrated Security=True;Pooling=False");
+                cfg.UseSqlServer(Configuration.GetConnectionString("ConnectionTodos"));
             });
+
+            services.AddDefaultIdentity<ApplicationUser>()
+                .AddDefaultUI(UIFramework.Bootstrap4)
+                .AddEntityFrameworkStores<WebTodosDbContext>();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                // Password settings.
+                options.Password.RequireDigit = true;
+                options.Password.RequireLowercase = true;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequiredLength = 6;
+                options.Password.RequiredUniqueChars = 0;
+
+                options.SignIn.RequireConfirmedEmail = false;
+                options.SignIn.RequireConfirmedPhoneNumber = false;
+            });
+
+            services.AddTransient<IEmailSender, DumbEmailSender>();
 
             services.Configure<CookiePolicyOptions>(options =>
             {

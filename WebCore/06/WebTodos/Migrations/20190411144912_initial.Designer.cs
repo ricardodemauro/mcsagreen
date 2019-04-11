@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebTodos.Data;
 
 namespace WebTodos.Migrations
 {
     [DbContext(typeof(WebTodosDbContext))]
-    partial class WebTodosDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190411144912_initial")]
+    partial class initial
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,8 +168,6 @@ namespace WebTodos.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<string>("Telefone");
-
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
@@ -197,6 +197,42 @@ namespace WebTodos.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categorias");
+                });
+
+            modelBuilder.Entity("WebTodos.Models.Contato", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("Age");
+
+                    b.Property<int?>("LocationId");
+
+                    b.Property<string>("Nome")
+                        .IsRequired();
+
+                    b.Property<string>("Telefone");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("LocationId");
+
+                    b.ToTable("Contatos");
+                });
+
+            modelBuilder.Entity("WebTodos.Models.GeoLocation", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Latitude");
+
+                    b.Property<decimal>("Longitude");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("GeoLocation");
                 });
 
             modelBuilder.Entity("WebTodos.Models.Todo", b =>
@@ -260,6 +296,13 @@ namespace WebTodos.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("WebTodos.Models.Contato", b =>
+                {
+                    b.HasOne("WebTodos.Models.GeoLocation", "Location")
+                        .WithMany()
+                        .HasForeignKey("LocationId");
                 });
 
             modelBuilder.Entity("WebTodos.Models.Todo", b =>

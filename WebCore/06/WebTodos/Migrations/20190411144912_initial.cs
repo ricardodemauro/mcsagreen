@@ -4,7 +4,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WebTodos.Migrations
 {
-    public partial class Initial : Migration
+    public partial class initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -40,8 +40,7 @@ namespace WebTodos.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false),
-                    Telefone = table.Column<string>(nullable: true)
+                    AccessFailedCount = table.Column<int>(nullable: false)
                 },
                 constraints: table =>
                 {
@@ -59,6 +58,20 @@ namespace WebTodos.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Categorias", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "GeoLocation",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    Longitude = table.Column<decimal>(nullable: false),
+                    Latitude = table.Column<decimal>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GeoLocation", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -187,6 +200,27 @@ namespace WebTodos.Migrations
                         onDelete: ReferentialAction.Restrict);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Contatos",
+                columns: table => new
+                {
+                    Id = table.Column<Guid>(nullable: false),
+                    Nome = table.Column<string>(nullable: false),
+                    Telefone = table.Column<string>(nullable: true),
+                    Age = table.Column<int>(nullable: false),
+                    LocationId = table.Column<int>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Contatos", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Contatos_GeoLocation_LocationId",
+                        column: x => x.LocationId,
+                        principalTable: "GeoLocation",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -227,6 +261,11 @@ namespace WebTodos.Migrations
                 filter: "[NormalizedUserName] IS NOT NULL");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Contatos_LocationId",
+                table: "Contatos",
+                column: "LocationId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Todos_CategoriaId",
                 table: "Todos",
                 column: "CategoriaId");
@@ -250,6 +289,9 @@ namespace WebTodos.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Contatos");
+
+            migrationBuilder.DropTable(
                 name: "Todos");
 
             migrationBuilder.DropTable(
@@ -257,6 +299,9 @@ namespace WebTodos.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");
+
+            migrationBuilder.DropTable(
+                name: "GeoLocation");
 
             migrationBuilder.DropTable(
                 name: "Categorias");

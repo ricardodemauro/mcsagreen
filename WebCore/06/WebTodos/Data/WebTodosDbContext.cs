@@ -8,7 +8,7 @@ using WebTodos.Models;
 
 namespace WebTodos.Data
 {
-    public class WebTodosDbContext : DbContext
+    public class WebTodosDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<Todo> Todos { get; set; }
 
@@ -20,6 +20,16 @@ namespace WebTodos.Data
         : base(options)
         {
 
+        }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            //builder.Entity<Contato>()
+            //    .Property(x => x.Location)
+            //    .
+
+            
+            base.OnModelCreating(builder);
         }
     }
 }
