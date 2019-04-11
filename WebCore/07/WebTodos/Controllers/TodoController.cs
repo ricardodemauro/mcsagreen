@@ -11,7 +11,7 @@ using WebTodos.Models;
 
 namespace WebTodos.Controllers
 {
-    [Authorize]
+    [Route("api/[controller]")]
     public class TodoController : Controller
     {
         public TodoController()
@@ -19,51 +19,39 @@ namespace WebTodos.Controllers
 
         }
 
-        [LogActionFilter]
-        public IActionResult Index([FromServices] IDatabase<Todo> database)
+        [HttpGet(Name = "Get")]
+        public IActionResult Get([FromServices] IDatabase<Todo> database)
         {
             ViewBag.ServerTime = DateTime.Now;
 
             var todos = database.GetAll();
-            return View(todos);
+            return Ok(todos);
         }
 
-        public IActionResult Edit(string id, [FromServices] IDatabase<Todo> database)
+        [HttpGet("{id}", Name = "GetById")]
+        public IActionResult Get(string id, [FromServices] IDatabase<Todo> database)
+        {
+            var todos = database.GetById(id);
+            return Ok(todos);
+        }
+
+
+        [HttpPut("{id}")]
+        public IActionResult Edit([FromRoute] string id, [FromBody] Todo item, [FromServices] IDatabase<Todo> database)
         {
             var todo = database.GetById(id);
-            return View(todo);
-        }
+            if (todo == null)
+                return NotFound();
 
-        [HttpPost]
-        public IActionResult Edit(string id, Todo item, [FromServices] IDatabase<Todo> database)
-        {
             database.Update(id, item);
-            return RedirectToAction("Index");
-        }
-
-        public IActionResult Create([FromServices] WebTodosDbContext dbContext)
-        {
-            BuildView(dbContext);
-            return View();
+            return Ok();
         }
 
         [HttpPost]
-        public IActionResult Create(Todo item, [FromServices] IDatabase<Todo> database)
+        public IActionResult Create([FromBody] Todo item, [FromServices] IDatabase<Todo> database)
         {
             database.Add(item);
-            return RedirectToAction("Index");
-        }
-
-        private void BuildView(WebTodosDbContext dbContext)
-        {
-            var categorias = dbContext.Categorias.ToList();
-
-            var options = new List<SelectListItem>();
-            foreach (var cat in categorias)
-            {
-                options.Add(new SelectListItem(cat.Descricao, cat.Id.ToString()));
-            }
-            ViewBag.CategoriaOptions = options;
+            return CreatedAtAction("Get", new { id = item.Id });
         }
     }
 }

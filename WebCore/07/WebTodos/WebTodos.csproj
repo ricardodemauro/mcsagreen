@@ -5,6 +5,13 @@
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Infra\TagHelpers\**" />
+    <Content Remove="Infra\TagHelpers\**" />
+    <EmbeddedResource Remove="Infra\TagHelpers\**" />
+    <None Remove="Infra\TagHelpers\**" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
@@ -12,11 +19,6 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.2.4" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.3" />
     <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
-  </ItemGroup>
-
-
-  <ItemGroup>
-    <Folder Include="Infra\TagHelpers\" />
   </ItemGroup>
 
 </Project>

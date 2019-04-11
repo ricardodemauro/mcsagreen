@@ -49,7 +49,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 - WebApis", "07 - WebApi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebTodos", "WebCore\07\WebTodos\WebTodos.csproj", "{C8FB03D7-444A-40A4-813F-D3D142AC070A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 - WebSockets", "08 - WebSockets", "{BB91704D-0E60-4C32-954A-B5289214D54A}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 - WebSockets and Cache", "08 - WebSockets and Cache", "{BB91704D-0E60-4C32-954A-B5289214D54A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebGreetingBook", "WebGreetingBook\WebGreetingBook.csproj", "{B1066B4F-24F6-4AEA-9919-4B285794A159}"
 EndProject

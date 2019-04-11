@@ -41,6 +41,8 @@ namespace WebGreetingBook
 
             services.AddSignalR();
 
+            services.AddMemoryCache();
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
