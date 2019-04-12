@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebTodos.Data;
 using WebTodos.Data.Repositories;
+using WebTodos.Infra;
 using WebTodos.Models;
 
 namespace WebTodos
@@ -33,23 +34,9 @@ namespace WebTodos
                 cfg.UseSqlServer(Configuration.GetConnectionString("ConnectionTodos"));
             });
 
-            services.AddDefaultIdentity<ApplicationUser>()
-                .AddDefaultUI(UIFramework.Bootstrap4)
-                .AddEntityFrameworkStores<WebTodosDbContext>();
 
-            services.Configure<IdentityOptions>(options =>
-            {
-                // Password settings.
-                options.Password.RequireDigit = true;
-                options.Password.RequireLowercase = true;
-                options.Password.RequireNonAlphanumeric = false;
-                options.Password.RequireUppercase = false;
-                options.Password.RequiredLength = 6;
-                options.Password.RequiredUniqueChars = 0;
-
-                options.SignIn.RequireConfirmedEmail = false;
-                options.SignIn.RequireConfirmedPhoneNumber = false;
-            });
+            DbFileProvider dbFileProvider = new DbFileProvider();
+            services.AddSingleton(dbFileProvider);
 
 
             services.Configure<CookiePolicyOptions>(options =>
@@ -77,10 +64,18 @@ namespace WebTodos
             }
 
             app.UseHttpsRedirection();
-            app.UseStaticFiles();
-            app.UseCookiePolicy();
 
-            app.UseAuthentication();
+
+            app.UseStaticFiles();
+
+            var blobFileProvider = app.ApplicationServices.GetRequiredService<DbFileProvider>();
+            app.UseStaticFiles(new StaticFileOptions()
+            {
+                FileProvider = blobFileProvider,
+                RequestPath = "/tennat"
+            });
+
+            app.UseCookiePolicy();
 
             app.UseMvc(routes =>
             {
