@@ -43,6 +43,9 @@ namespace WebGreetingBook
 
             services.AddMemoryCache();
 
+            services.AddSession();
+
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
@@ -63,6 +66,8 @@ namespace WebGreetingBook
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSession();
 
             app.UseSignalR(routes =>
             {

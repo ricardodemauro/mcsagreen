@@ -49,8 +49,12 @@ namespace WebTodos.EF.SQlite.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken()]
         public IActionResult Create(Todo item)
         {
+            if (!ModelState.IsValid)
+                return View();
+
             _db.Todos.Add(item);
             _db.SaveChanges();
             return RedirectToAction("Index");

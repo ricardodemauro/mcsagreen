@@ -12,6 +12,7 @@ using WebTodos.Models;
 namespace WebTodos.Controllers
 {
     [Route("api/[controller]")]
+    [ApiController]
     public class TodoController : Controller
     {
         public TodoController()
@@ -19,7 +20,7 @@ namespace WebTodos.Controllers
 
         }
 
-        [HttpGet(Name = "Get")]
+        [HttpGet()]
         public IActionResult Get([FromServices] IDatabase<Todo> database)
         {
             ViewBag.ServerTime = DateTime.Now;
@@ -28,22 +29,37 @@ namespace WebTodos.Controllers
             return Ok(todos);
         }
 
-        [HttpGet("{id}", Name = "GetById")]
+        [HttpGet("{id}")]
         public IActionResult Get(string id, [FromServices] IDatabase<Todo> database)
         {
-            var todos = database.GetById(id);
-            return Ok(todos);
+            var todo = database.GetById(id);
+
+            if (todo == null)
+                return NotFound();
+
+            return Ok(todo);
         }
 
 
         [HttpPut("{id}")]
         public IActionResult Edit([FromRoute] string id, [FromBody] Todo item, [FromServices] IDatabase<Todo> database)
         {
-            var todo = database.GetById(id);
-            if (todo == null)
-                return NotFound();
+            //var todo = database.GetById(id);
+            //if (todo == null)
+            //    return NotFound();
 
             database.Update(id, item);
+            return Ok();
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete([FromRoute] string id, [FromServices] IDatabase<Todo> database)
+        {
+            //var todo = database.GetById(id);
+            //if (todo == null)
+            //    return NotFound();
+
+            database.Remove(id);
             return Ok();
         }
 

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebTodos.Data;
@@ -27,7 +28,7 @@ namespace WebTodos
 
             services.AddDbContext<WebTodosDbContext>(cfg =>
             {
-                //cfg.UseSQLite(@"Data Source=GALACTUS;Initial Catalog=TODOS_IDENTITY;Integrated Security=True;Pooling=False");
+                cfg.UseSqlServer(@"Data Source=GALACTUS;Initial Catalog=webapitodos;Integrated Security=True;Pooling=False");
             });
 
             services.Configure<CookiePolicyOptions>(options =>
@@ -60,7 +61,7 @@ namespace WebTodos
 
             app.UseAuthentication();
 
-            app.UseMvcWithDefaultRoute();
+            app.UseMvc();
         }
     }
 }
