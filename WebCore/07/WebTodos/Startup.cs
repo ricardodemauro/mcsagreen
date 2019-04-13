@@ -61,7 +61,7 @@ namespace WebTodos
 
             app.UseAuthentication();
 
-            app.UseMvc();
+            app.UseMvcWithDefaultRoute();
         }
     }
 }

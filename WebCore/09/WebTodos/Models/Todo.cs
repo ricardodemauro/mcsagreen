@@ -7,7 +7,7 @@ using WebTodos.Infra;
 
 namespace WebTodos.Models
 {
-    public class Todo : IDbEntity
+    public class Todo 
     {
         public Guid Id { get; set; }
 

@@ -38,7 +38,7 @@ namespace WebTodos
 
             services.AddDbContext<WebTodosDbContext>(cfg =>
             {
-                cfg.UseSqlServer(@"Data Source=GALACTUS;Initial Catalog=TODOS_IDENTITY;Integrated Security=True;Pooling=False");
+                cfg.UseSqlServer(@"Server=tcp:todoappgreen.database.windows.net,1433;Initial Catalog=todoapp;Persist Security Info=False;User ID=greenadmin;Password=test.1234;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
             });
 
             services.Configure<CookiePolicyOptions>(options =>

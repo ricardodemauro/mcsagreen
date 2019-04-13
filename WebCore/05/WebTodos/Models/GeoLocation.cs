@@ -8,6 +8,8 @@ namespace WebTodos.Models
 {
     public class GeoLocation
     {
+        public int Id { get; set; }
+
         public decimal Longitude { get; set; }
 
         public decimal Latitude { get; set; }

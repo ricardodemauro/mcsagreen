@@ -12,6 +12,14 @@
     <None Remove="Infra\TagHelpers\**" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Readme.txt" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Readme.txt" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />

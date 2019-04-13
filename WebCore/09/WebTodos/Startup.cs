@@ -1,17 +1,12 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
-using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using WebTodos.Data;
-using WebTodos.Data.Repositories;
 using WebTodos.Infra;
-using WebTodos.Models;
 
 namespace WebTodos
 {
@@ -27,8 +22,6 @@ namespace WebTodos
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped(typeof(IDatabase<,>), typeof(EFGenericRepository<,>));
-
             services.AddDbContext<WebTodosDbContext>(cfg =>
             {
                 cfg.UseSqlServer(Configuration.GetConnectionString("ConnectionTodos"));
